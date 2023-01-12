@@ -1,0 +1,11 @@
+C:\Users\PC 01\Desktop\PreparaCursos - Marlon\Desenvolvedor CSharp\CSharp-AdvancedOne\SmartGYM\SmartGYM\SmartGYM\bin\Debug\SmartGYM.exe.config
+C:\Users\PC 01\Desktop\PreparaCursos - Marlon\Desenvolvedor CSharp\CSharp-AdvancedOne\SmartGYM\SmartGYM\SmartGYM\bin\Debug\SmartGYM.exe
+C:\Users\PC 01\Desktop\PreparaCursos - Marlon\Desenvolvedor CSharp\CSharp-AdvancedOne\SmartGYM\SmartGYM\SmartGYM\bin\Debug\SmartGYM.pdb
+C:\Users\PC 01\Desktop\PreparaCursos - Marlon\Desenvolvedor CSharp\CSharp-AdvancedOne\SmartGYM\SmartGYM\SmartGYM\obj\Debug\SmartGYM.csproj.AssemblyReference.cache
+C:\Users\PC 01\Desktop\PreparaCursos - Marlon\Desenvolvedor CSharp\CSharp-AdvancedOne\SmartGYM\SmartGYM\SmartGYM\obj\Debug\SmartGYM.csproj.SuggestedBindingRedirects.cache
+C:\Users\PC 01\Desktop\PreparaCursos - Marlon\Desenvolvedor CSharp\CSharp-AdvancedOne\SmartGYM\SmartGYM\SmartGYM\obj\Debug\SmartGYM.frmPrincipal.resources
+C:\Users\PC 01\Desktop\PreparaCursos - Marlon\Desenvolvedor CSharp\CSharp-AdvancedOne\SmartGYM\SmartGYM\SmartGYM\obj\Debug\SmartGYM.Properties.Resources.resources
+C:\Users\PC 01\Desktop\PreparaCursos - Marlon\Desenvolvedor CSharp\CSharp-AdvancedOne\SmartGYM\SmartGYM\SmartGYM\obj\Debug\SmartGYM.csproj.GenerateResource.cache
+C:\Users\PC 01\Desktop\PreparaCursos - Marlon\Desenvolvedor CSharp\CSharp-AdvancedOne\SmartGYM\SmartGYM\SmartGYM\obj\Debug\SmartGYM.csproj.CoreCompileInputs.cache
+C:\Users\PC 01\Desktop\PreparaCursos - Marlon\Desenvolvedor CSharp\CSharp-AdvancedOne\SmartGYM\SmartGYM\SmartGYM\obj\Debug\SmartGYM.exe
+C:\Users\PC 01\Desktop\PreparaCursos - Marlon\Desenvolvedor CSharp\CSharp-AdvancedOne\SmartGYM\SmartGYM\SmartGYM\obj\Debug\SmartGYM.pdb
