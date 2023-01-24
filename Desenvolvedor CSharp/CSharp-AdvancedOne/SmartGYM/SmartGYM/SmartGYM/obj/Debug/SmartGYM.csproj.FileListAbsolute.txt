@@ -9,3 +9,6 @@ C:\Users\PC 01\Desktop\PreparaCursos - Marlon\Desenvolvedor CSharp\CSharp-Advanc
 C:\Users\PC 01\Desktop\PreparaCursos - Marlon\Desenvolvedor CSharp\CSharp-AdvancedOne\SmartGYM\SmartGYM\SmartGYM\obj\Debug\SmartGYM.csproj.CoreCompileInputs.cache
 C:\Users\PC 01\Desktop\PreparaCursos - Marlon\Desenvolvedor CSharp\CSharp-AdvancedOne\SmartGYM\SmartGYM\SmartGYM\obj\Debug\SmartGYM.exe
 C:\Users\PC 01\Desktop\PreparaCursos - Marlon\Desenvolvedor CSharp\CSharp-AdvancedOne\SmartGYM\SmartGYM\SmartGYM\obj\Debug\SmartGYM.pdb
+C:\Users\PC 01\Desktop\PreparaCursos - Marlon\Desenvolvedor CSharp\CSharp-AdvancedOne\SmartGYM\SmartGYM\SmartGYM\obj\Debug\SmartGYM.frmAddPersonalTrainer.resources
+C:\Users\PC 01\Desktop\PreparaCursos - Marlon\Desenvolvedor CSharp\CSharp-AdvancedOne\SmartGYM\SmartGYM\SmartGYM\obj\Debug\SmartGYM.frmOpcoesColaboradores.resources
+C:\Users\PC 01\Desktop\PreparaCursos - Marlon\Desenvolvedor CSharp\CSharp-AdvancedOne\SmartGYM\SmartGYM\SmartGYM\obj\Debug\SmartGYM.RJTextBox.resources

@@ -46,6 +46,36 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmAddPersonalTrainer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddPersonalTrainer.Designer.cs">
+      <DependentUpon>frmAddPersonalTrainer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOpcoesColaboradores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOpcoesColaboradores.Designer.cs">
+      <DependentUpon>frmOpcoesColaboradores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RJControls\CircularPictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RJControls\MenuColorTable.cs" />
+    <Compile Include="RJControls\MenuRenderer.cs" />
+    <Compile Include="PersonalTrainer.cs" />
+    <Compile Include="RJControls\RJDropdownMenu.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RJControls\RoundButtons.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RJTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RJTextBox.Designer.cs">
+      <DependentUpon>RJTextBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="SmartGYMConnection.cs" />
     <Compile Include="frmPrincipal.cs">
       <SubType>Form</SubType>
@@ -55,6 +85,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmAddPersonalTrainer.resx">
+      <DependentUpon>frmAddPersonalTrainer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOpcoesColaboradores.resx">
+      <DependentUpon>frmOpcoesColaboradores.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
@@ -67,6 +103,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="RJTextBox.resx">
+      <DependentUpon>RJTextBox.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

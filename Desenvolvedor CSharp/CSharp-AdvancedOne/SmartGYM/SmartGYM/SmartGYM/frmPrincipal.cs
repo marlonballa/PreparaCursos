@@ -26,17 +26,26 @@ namespace SmartGYM
                 try
                 {
                     connectionSmartGYM.Open(); //Abre a conexão com o banco de dados
-                    MessageBox.Show("Conexão com o banco de dados efetuada com sucesso!");
+                    MessageBox.Show("Seja muito bem-vindo ao SmartGym!");
                 }
                 catch (Exception)
                 {
                     MessageBox.Show("Houve um erro no processo de conexão com o banco de dados");
                 }
-                finally
-                {
-                    MessageBox.Show("Seja muito bem-vindo ao SmartGYM!");
-                }
             }
+
+            ddmPeople.IsMainMenu = true;
+        }
+
+        private void btnShowMenuPeople_Click(object sender, EventArgs e)
+        {
+            ddmPeople.Show(btnShowMenuPeople, btnShowMenuPeople.Width, 0);
+        }
+
+        private void colaboradoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmOpcoesColaboradores frmOpcoesColaboradores = new frmOpcoesColaboradores();
+            frmOpcoesColaboradores.ShowDialog();
         }
     }
 }
