@@ -171,7 +171,10 @@
             this.ClientSize = new System.Drawing.Size(1008, 537);
             this.Controls.Add(this.toolStrip1);
             this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "frmPrincipal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Smart Gym - O Melhor Gestor de Academias";
             this.Load += new System.EventHandler(this.frmPrincipal_Load);
             this.toolStrip1.ResumeLayout(false);

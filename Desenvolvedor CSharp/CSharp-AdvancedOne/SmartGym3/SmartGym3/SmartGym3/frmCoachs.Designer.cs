@@ -28,26 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCoachs));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnNewCoach = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.btnSaveCoach = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvPersonalTrainer = new System.Windows.Forms.DataGridView();
             this.txtValorPesquisa = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.cbItemPesquisa = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtTelefone = new System.Windows.Forms.MaskedTextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.txtCPF = new System.Windows.Forms.MaskedTextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtCidade = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtCep = new System.Windows.Forms.MaskedTextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtBairro = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -57,8 +54,29 @@
             this.txtNome = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtObservacoes = new System.Windows.Forms.TextBox();
+            this.txtCPF = new System.Windows.Forms.TextBox();
+            this.txtTelefone = new System.Windows.Forms.TextBox();
+            this.txtCep = new System.Windows.Forms.TextBox();
+            this.txtSalario = new System.Windows.Forms.TextBox();
+            this.smartGYMDataSet = new SmartGym3.SmartGYMDataSet();
+            this.personalTrainerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.personalTrainerTableAdapter = new SmartGym3.SmartGYMDataSetTableAdapters.PersonalTrainerTableAdapter();
+            this.idPersonalTrainerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.namePersonalTrainerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addressPersonalTrainerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.districtPersonalTrainerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cityPersonalTrainerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cEPPersonalTrainerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phonePersonalTrainerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cPFPersonalTrainerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.salaryPersonalTrainerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.commentsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnEdit = new System.Windows.Forms.DataGridViewImageColumn();
+            this.btnDelete = new System.Windows.Forms.DataGridViewImageColumn();
             this.toolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPersonalTrainer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.smartGYMDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.personalTrainerBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -102,27 +120,36 @@
             this.btnSaveCoach.Text = "Salvar Coach";
             this.btnSaveCoach.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnSaveCoach.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnSaveCoach.Click += new System.EventHandler(this.btnSaveCoach_Click);
             // 
             // toolStripSeparator6
             // 
             this.toolStripSeparator6.Name = "toolStripSeparator6";
             this.toolStripSeparator6.Size = new System.Drawing.Size(6, 70);
             // 
-            // maskedTextBox1
+            // dgvPersonalTrainer
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(511, 87);
-            this.maskedTextBox1.Mask = "$99.999,99";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(79, 20);
-            this.maskedTextBox1.TabIndex = 62;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(16, 202);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(980, 323);
-            this.dataGridView1.TabIndex = 61;
+            this.dgvPersonalTrainer.AutoGenerateColumns = false;
+            this.dgvPersonalTrainer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPersonalTrainer.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idPersonalTrainerDataGridViewTextBoxColumn,
+            this.namePersonalTrainerDataGridViewTextBoxColumn,
+            this.addressPersonalTrainerDataGridViewTextBoxColumn,
+            this.districtPersonalTrainerDataGridViewTextBoxColumn,
+            this.cityPersonalTrainerDataGridViewTextBoxColumn,
+            this.cEPPersonalTrainerDataGridViewTextBoxColumn,
+            this.phonePersonalTrainerDataGridViewTextBoxColumn,
+            this.cPFPersonalTrainerDataGridViewTextBoxColumn,
+            this.salaryPersonalTrainerDataGridViewTextBoxColumn,
+            this.commentsDataGridViewTextBoxColumn,
+            this.btnEdit,
+            this.btnDelete});
+            this.dgvPersonalTrainer.DataSource = this.personalTrainerBindingSource;
+            this.dgvPersonalTrainer.Location = new System.Drawing.Point(16, 202);
+            this.dgvPersonalTrainer.Name = "dgvPersonalTrainer";
+            this.dgvPersonalTrainer.RowHeadersVisible = false;
+            this.dgvPersonalTrainer.Size = new System.Drawing.Size(980, 323);
+            this.dgvPersonalTrainer.TabIndex = 61;
             // 
             // txtValorPesquisa
             // 
@@ -178,31 +205,15 @@
             this.label1.TabIndex = 56;
             this.label1.Text = "Salário:";
             // 
-            // txtTelefone
-            // 
-            this.txtTelefone.Location = new System.Drawing.Point(224, 87);
-            this.txtTelefone.Mask = "(00) 0-0000-0000";
-            this.txtTelefone.Name = "txtTelefone";
-            this.txtTelefone.Size = new System.Drawing.Size(93, 20);
-            this.txtTelefone.TabIndex = 55;
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(164, 88);
+            this.label9.Location = new System.Drawing.Point(187, 88);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(54, 19);
+            this.label9.Size = new System.Drawing.Size(31, 19);
             this.label9.TabIndex = 54;
-            this.label9.Text = "Celular:";
-            // 
-            // txtCPF
-            // 
-            this.txtCPF.Location = new System.Drawing.Point(87, 87);
-            this.txtCPF.Mask = "000.000.000-00";
-            this.txtCPF.Name = "txtCPF";
-            this.txtCPF.Size = new System.Drawing.Size(63, 20);
-            this.txtCPF.TabIndex = 53;
+            this.label9.Text = "Cel:";
             // 
             // label8
             // 
@@ -230,14 +241,6 @@
             this.label7.Size = new System.Drawing.Size(54, 19);
             this.label7.TabIndex = 50;
             this.label7.Text = "Cidade:";
-            // 
-            // txtCep
-            // 
-            this.txtCep.Location = new System.Drawing.Point(383, 87);
-            this.txtCep.Mask = "00.000-999";
-            this.txtCep.Name = "txtCep";
-            this.txtCep.Size = new System.Drawing.Size(63, 20);
-            this.txtCep.TabIndex = 49;
             // 
             // label6
             // 
@@ -318,25 +321,155 @@
             this.txtObservacoes.Size = new System.Drawing.Size(400, 20);
             this.txtObservacoes.TabIndex = 40;
             // 
+            // txtCPF
+            // 
+            this.txtCPF.Location = new System.Drawing.Point(87, 87);
+            this.txtCPF.Name = "txtCPF";
+            this.txtCPF.Size = new System.Drawing.Size(84, 20);
+            this.txtCPF.TabIndex = 63;
+            // 
+            // txtTelefone
+            // 
+            this.txtTelefone.Location = new System.Drawing.Point(224, 89);
+            this.txtTelefone.Name = "txtTelefone";
+            this.txtTelefone.Size = new System.Drawing.Size(93, 20);
+            this.txtTelefone.TabIndex = 64;
+            // 
+            // txtCep
+            // 
+            this.txtCep.Location = new System.Drawing.Point(383, 88);
+            this.txtCep.Name = "txtCep";
+            this.txtCep.Size = new System.Drawing.Size(63, 20);
+            this.txtCep.TabIndex = 65;
+            // 
+            // txtSalario
+            // 
+            this.txtSalario.Location = new System.Drawing.Point(511, 89);
+            this.txtSalario.Name = "txtSalario";
+            this.txtSalario.Size = new System.Drawing.Size(79, 20);
+            this.txtSalario.TabIndex = 66;
+            // 
+            // smartGYMDataSet
+            // 
+            this.smartGYMDataSet.DataSetName = "SmartGYMDataSet";
+            this.smartGYMDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // personalTrainerBindingSource
+            // 
+            this.personalTrainerBindingSource.DataMember = "PersonalTrainer";
+            this.personalTrainerBindingSource.DataSource = this.smartGYMDataSet;
+            // 
+            // personalTrainerTableAdapter
+            // 
+            this.personalTrainerTableAdapter.ClearBeforeFill = true;
+            // 
+            // idPersonalTrainerDataGridViewTextBoxColumn
+            // 
+            this.idPersonalTrainerDataGridViewTextBoxColumn.DataPropertyName = "IdPersonalTrainer";
+            this.idPersonalTrainerDataGridViewTextBoxColumn.HeaderText = "Matrícula";
+            this.idPersonalTrainerDataGridViewTextBoxColumn.Name = "idPersonalTrainerDataGridViewTextBoxColumn";
+            this.idPersonalTrainerDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idPersonalTrainerDataGridViewTextBoxColumn.Width = 40;
+            // 
+            // namePersonalTrainerDataGridViewTextBoxColumn
+            // 
+            this.namePersonalTrainerDataGridViewTextBoxColumn.DataPropertyName = "NamePersonalTrainer";
+            this.namePersonalTrainerDataGridViewTextBoxColumn.HeaderText = "Nome:";
+            this.namePersonalTrainerDataGridViewTextBoxColumn.Name = "namePersonalTrainerDataGridViewTextBoxColumn";
+            this.namePersonalTrainerDataGridViewTextBoxColumn.Width = 280;
+            // 
+            // addressPersonalTrainerDataGridViewTextBoxColumn
+            // 
+            this.addressPersonalTrainerDataGridViewTextBoxColumn.DataPropertyName = "AddressPersonalTrainer";
+            this.addressPersonalTrainerDataGridViewTextBoxColumn.HeaderText = "AddressPersonalTrainer";
+            this.addressPersonalTrainerDataGridViewTextBoxColumn.Name = "addressPersonalTrainerDataGridViewTextBoxColumn";
+            this.addressPersonalTrainerDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // districtPersonalTrainerDataGridViewTextBoxColumn
+            // 
+            this.districtPersonalTrainerDataGridViewTextBoxColumn.DataPropertyName = "DistrictPersonalTrainer";
+            this.districtPersonalTrainerDataGridViewTextBoxColumn.HeaderText = "DistrictPersonalTrainer";
+            this.districtPersonalTrainerDataGridViewTextBoxColumn.Name = "districtPersonalTrainerDataGridViewTextBoxColumn";
+            this.districtPersonalTrainerDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // cityPersonalTrainerDataGridViewTextBoxColumn
+            // 
+            this.cityPersonalTrainerDataGridViewTextBoxColumn.DataPropertyName = "CityPersonalTrainer";
+            this.cityPersonalTrainerDataGridViewTextBoxColumn.HeaderText = "Cidade:";
+            this.cityPersonalTrainerDataGridViewTextBoxColumn.Name = "cityPersonalTrainerDataGridViewTextBoxColumn";
+            // 
+            // cEPPersonalTrainerDataGridViewTextBoxColumn
+            // 
+            this.cEPPersonalTrainerDataGridViewTextBoxColumn.DataPropertyName = "CEPPersonalTrainer";
+            this.cEPPersonalTrainerDataGridViewTextBoxColumn.HeaderText = "CEPPersonalTrainer";
+            this.cEPPersonalTrainerDataGridViewTextBoxColumn.Name = "cEPPersonalTrainerDataGridViewTextBoxColumn";
+            this.cEPPersonalTrainerDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // phonePersonalTrainerDataGridViewTextBoxColumn
+            // 
+            this.phonePersonalTrainerDataGridViewTextBoxColumn.DataPropertyName = "PhonePersonalTrainer";
+            this.phonePersonalTrainerDataGridViewTextBoxColumn.HeaderText = "Telefone: ";
+            this.phonePersonalTrainerDataGridViewTextBoxColumn.Name = "phonePersonalTrainerDataGridViewTextBoxColumn";
+            // 
+            // cPFPersonalTrainerDataGridViewTextBoxColumn
+            // 
+            this.cPFPersonalTrainerDataGridViewTextBoxColumn.DataPropertyName = "CPFPersonalTrainer";
+            this.cPFPersonalTrainerDataGridViewTextBoxColumn.HeaderText = "CPFPersonalTrainer";
+            this.cPFPersonalTrainerDataGridViewTextBoxColumn.Name = "cPFPersonalTrainerDataGridViewTextBoxColumn";
+            this.cPFPersonalTrainerDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // salaryPersonalTrainerDataGridViewTextBoxColumn
+            // 
+            this.salaryPersonalTrainerDataGridViewTextBoxColumn.DataPropertyName = "SalaryPersonalTrainer";
+            this.salaryPersonalTrainerDataGridViewTextBoxColumn.HeaderText = "Salário:";
+            this.salaryPersonalTrainerDataGridViewTextBoxColumn.Name = "salaryPersonalTrainerDataGridViewTextBoxColumn";
+            // 
+            // commentsDataGridViewTextBoxColumn
+            // 
+            this.commentsDataGridViewTextBoxColumn.DataPropertyName = "Comments";
+            this.commentsDataGridViewTextBoxColumn.HeaderText = "Observações:";
+            this.commentsDataGridViewTextBoxColumn.Name = "commentsDataGridViewTextBoxColumn";
+            this.commentsDataGridViewTextBoxColumn.Width = 260;
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.HeaderText = "Editar";
+            this.btnEdit.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.Image")));
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.ReadOnly = true;
+            this.btnEdit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.btnEdit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.btnEdit.Width = 40;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.HeaderText = "Excluir";
+            this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.ReadOnly = true;
+            this.btnDelete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.btnDelete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.btnDelete.Width = 60;
+            // 
             // frmCoachs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 537);
-            this.Controls.Add(this.maskedTextBox1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.txtSalario);
+            this.Controls.Add(this.txtCep);
+            this.Controls.Add(this.txtTelefone);
+            this.Controls.Add(this.txtCPF);
+            this.Controls.Add(this.dgvPersonalTrainer);
             this.Controls.Add(this.txtValorPesquisa);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.cbItemPesquisa);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtTelefone);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.txtCPF);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtCidade);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.txtCep);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtBairro);
             this.Controls.Add(this.label5);
@@ -347,11 +480,17 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtObservacoes);
             this.Controls.Add(this.toolStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MinimizeBox = false;
             this.Name = "frmCoachs";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Smart Gym  - Adicionar Novos Coachs";
+            this.Load += new System.EventHandler(this.frmCoachs_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPersonalTrainer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.smartGYMDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.personalTrainerBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -364,20 +503,16 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripButton btnSaveCoach;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvPersonalTrainer;
         private System.Windows.Forms.TextBox txtValorPesquisa;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.ComboBox cbItemPesquisa;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.MaskedTextBox txtTelefone;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.MaskedTextBox txtCPF;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtCidade;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.MaskedTextBox txtCep;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtBairro;
         private System.Windows.Forms.Label label5;
@@ -387,5 +522,24 @@
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtObservacoes;
+        private System.Windows.Forms.TextBox txtCPF;
+        private System.Windows.Forms.TextBox txtTelefone;
+        private System.Windows.Forms.TextBox txtCep;
+        private System.Windows.Forms.TextBox txtSalario;
+        private SmartGYMDataSet smartGYMDataSet;
+        private System.Windows.Forms.BindingSource personalTrainerBindingSource;
+        private SmartGYMDataSetTableAdapters.PersonalTrainerTableAdapter personalTrainerTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idPersonalTrainerDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn namePersonalTrainerDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn addressPersonalTrainerDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn districtPersonalTrainerDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cityPersonalTrainerDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cEPPersonalTrainerDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn phonePersonalTrainerDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cPFPersonalTrainerDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn salaryPersonalTrainerDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn commentsDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewImageColumn btnEdit;
+        private System.Windows.Forms.DataGridViewImageColumn btnDelete;
     }
 }
