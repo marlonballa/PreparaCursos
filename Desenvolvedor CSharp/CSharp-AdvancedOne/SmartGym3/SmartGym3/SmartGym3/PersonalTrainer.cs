@@ -67,6 +67,61 @@ namespace SmartGym3
             }
         }
 
+        /**
+         * Método responsávle por alterar as informações dos Coaches
+         */
+
+        public void UpdateCoachInformations(int idPersonalTrainer, string namePersonalTrainer, string addressPersonalTrainer, string districtPersonalTrainer, string cityPersonalTrainer, string cepPersonalTrainer, string phonePersonalTrainer, string cpfPersonalTrainer, decimal salaryPersonalTrainer, string comments)
+        {
+            try
+            {
+                //Variável responsável por receber as informações da query de inserção no banco de dados
+                SqlCommand updateCoachInformations = new SqlCommand();
+
+                //Variável responsável por armazenar a query de inserção de novo Coach
+                StringBuilder updateCoachInformationsQuery = new StringBuilder();
+
+
+                //Objeto da classe SqlConnection que realiza a conexão com o banco de dados
+                using (SqlConnection connectionWithDBSmartGym = new SqlConnection(SmartGymDBConnection.stringConnectionSmartGym))
+                {
+                    //Abre a conexão com o banco de dados
+                    connectionWithDBSmartGym.Open();
+
+                    //A query de inserção será executada após a abertura da conexão com o banco de dados
+                    //Vale lembrar que estamos criando uma query, por isso os parâmetros devem ser exatamente iguais as colunas da tabela no banco de dados. 
+                    updateCoachInformationsQuery.Append("UPDATE PersonalTrainer SET NamePersonalTrainer = @NamePersonalTrainer, AddressPersonalTrainer = @AddressPersonalTrainer, DistrictPersonalTrainer = @DistrictPersonalTrainer,");
+                    updateCoachInformationsQuery.Append(" CityPersonalTrainer = @CityPersonalTrainer, CEPPersonalTrainer = @CEPPersonalTrainer, PhonePersonalTrainer = @PhonePersonalTrainer,");
+                    updateCoachInformationsQuery.Append(" CPFPersonalTrainer = @CPFPersonalTrainer, SalaryPersonalTrainer = @SalaryPersonalTrainer, Comments = @Comments");
+                    updateCoachInformationsQuery.Append(" Where (IdPersonalTrainer = @IdPersonalTrainer)");
+
+                    //Quando criamos o método - SaveNewCoach - indicamos os parâmetros que devem ser salvos. Agora, devemos relacionar estes parâmetros com os valores da instrução SQL.
+                    //Para que possamos relacionar um valor da query com um parâmetro do método, devemos utilizar a class SqlParameter
+                    updateCoachInformations.Parameters.Add(new SqlParameter("@IdPersonalTrainer", idPersonalTrainer));
+                    updateCoachInformations.Parameters.Add(new SqlParameter("@NamePersonalTrainer", namePersonalTrainer));
+                    updateCoachInformations.Parameters.Add(new SqlParameter("@AddressPersonalTrainer", addressPersonalTrainer));
+                    updateCoachInformations.Parameters.Add(new SqlParameter("@DistrictPersonalTrainer", districtPersonalTrainer));
+                    updateCoachInformations.Parameters.Add(new SqlParameter("@CityPersonalTrainer", cityPersonalTrainer));
+                    updateCoachInformations.Parameters.Add(new SqlParameter("@CEPPersonalTrainer", cepPersonalTrainer));
+                    updateCoachInformations.Parameters.Add(new SqlParameter("@PhonePersonalTrainer", phonePersonalTrainer));
+                    updateCoachInformations.Parameters.Add(new SqlParameter("@CPFPersonalTrainer", cpfPersonalTrainer));
+                    updateCoachInformations.Parameters.Add(new SqlParameter("@SalaryPersonalTrainer", salaryPersonalTrainer));
+                    updateCoachInformations.Parameters.Add(new SqlParameter("@Comments", comments));
+
+                    //Devemos indicar que a instrução SQL addNewCoachQuery é o comando que deverá ser executado.
+                    updateCoachInformations.CommandText = updateCoachInformationsQuery.ToString();
+                    //Agora devemos especificar que este comando deverá ser executado átraves da conexão estabelecida
+                    updateCoachInformations.Connection = connectionWithDBSmartGym;
+                    //Para que as informações sejam inseridas no banco de dados, é necessário determinar que o query de inserção seja executada
+                    //Para isso vamos utilizar o método ExecuteNonQuery, que permite a execução de instruçãos Insert, Delete e UpDate
+                    updateCoachInformations.ExecuteNonQuery();
+                }
+            }
+            catch (Exception erro)
+            {
+                throw new Exception("Ocorreu um erro no método UpdateCoachInformations. Por favor, tente novamente mais tarde." + erro);
+            }
+        }
         public DataTable ListCoaches()
         {
             /*
