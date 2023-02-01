@@ -106,11 +106,75 @@ namespace SmartGym3
                 txtCidade.Text = dgvPersonalTrainer.Rows[e.RowIndex].Cells["dgvColumCityPersonalTrainer"].Value.ToString();
                 txtObservacoes.Text = dgvPersonalTrainer.Rows[e.RowIndex].Cells["dgvColumCommentsPersonalTrainer"].Value.ToString();
             }
+            //Verifica se o usuário clicou na célula que possui o ícone de Deletar, para realizar a exclusão do registro.
+            //Mostra uma mensagem confirmando se o usuário deseja excluir aquele registro. 
+            else if (dgvPersonalTrainer.Columns[e.ColumnIndex].Name == "btnDelete" &&
+                MessageBox.Show("Deseja realmente excluir?", "Deseja Excluir?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                try
+                {
+                    //Como o método para exclusão de Coaches está na classe PersonalTrainer, precisamos instanciá-la para acessarmos os seus métodos
+                    PersonalTrainer PersonalTrainer = new PersonalTrainer();
+                    //Acessando o método
+                    PersonalTrainer.DeleteCoach(Convert.ToInt32(dgvPersonalTrainer.Rows[e.RowIndex].Cells["dgvColumIdPersonalTrainer"].Value));
+
+                    //Mensagem de aviso que a exclusão aconteceu da forma correta
+                    MessageBox.Show("O Coach foi excluído com sucesso!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    //Chama o método que lista o professores e com isso atualiza o DataGridView
+                    listCoachesFrmCoaches();
+
+                    //Chama o método que limpa os TextBoxes
+                    ClearFrmCoaches();
+                }
+                catch (Exception erro)
+                {
+                    MessageBox.Show(erro.Message, "Houve um erro ao tentar executar esta operação! ", MessageBoxButtons.OK, MessageBoxIcon.Error);              
+                }
+            }
         }
 
         private void btnNewCoach_Click(object sender, EventArgs e)
         {
             ClearFrmCoaches();
+        }
+
+        private void txtValorPesquisa_TextChanged(object sender, EventArgs e)
+        {
+            PersonalTrainer PersonalTrainer = new PersonalTrainer();
+
+            try
+            {
+                //Identifica o index do item selecionado no ComboBox de pesquisa, para realizar a chamada ao método correto. 
+                int selectedIndex = cbItemPesquisa.SelectedIndex;
+
+                switch (selectedIndex)
+                {
+                    case 0:
+                        dgvPersonalTrainer.DataSource = PersonalTrainer.SearchCPF(txtValorPesquisa.Text); ;
+                        break;
+                    case 1:
+                        dgvPersonalTrainer.DataSource = PersonalTrainer.SearchName(txtValorPesquisa.Text);
+                        break;
+                    default:
+                        MessageBox.Show("Ainda será desenvolvido um método para esta pesquisa.");
+                        break;
+                }
+            }
+            catch (Exception erro)
+            {
+
+                MessageBox.Show(erro.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int selectedIndex = cbItemPesquisa.SelectedIndex;
+            var selecteedItem = cbItemPesquisa.SelectedItem;
+
+            MessageBox.Show("Nome do item selecionado:" + selecteedItem.ToString() + "\n" + "index do item selecionado: " + selectedIndex.ToString());
+            
         }
     }
 }

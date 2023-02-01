@@ -122,6 +122,45 @@ namespace SmartGym3
                 throw new Exception("Ocorreu um erro no método UpdateCoachInformations. Por favor, tente novamente mais tarde." + erro);
             }
         }
+
+        /*
+         * Método responsável por apagar o coach selecionado.
+         * Vamos utilizar o Id do Personal Trainer como referência para realizar a exclusão dos dados. 
+         */
+        public void DeleteCoach(int idPersonalTrainer)
+        {
+            try
+            {
+                //Variável responsável por receber as informações da query de inserção no banco de dados
+                SqlCommand deleteCoach = new SqlCommand();
+
+                //Variável responsável por armazenar a query de inserção de novo Coach
+                StringBuilder deleteCoachQuery = new StringBuilder();
+
+
+                //Objeto da classe SqlConnection que realiza a conexão com o banco de dados
+                using (SqlConnection connectionWithDBSmartGym = new SqlConnection(SmartGymDBConnection.stringConnectionSmartGym))
+                {
+                    //Abre a conexão com o banco de dados
+                    connectionWithDBSmartGym.Open();
+
+                    //Query responsável por realizar a exclusão dos dados da tabela PersonalTrainer                    
+                    deleteCoachQuery.Append("DELETE FROM PersonalTrainer");
+                    deleteCoachQuery.Append(" WHERE (IdPersonalTrainer = @idPersonalTrainer)");
+
+                    deleteCoach.Parameters.Add(new SqlParameter("@idPersonalTrainer", idPersonalTrainer));
+
+                    deleteCoach.CommandText = deleteCoachQuery.ToString();
+                    deleteCoach.Connection = connectionWithDBSmartGym;
+                    deleteCoach.ExecuteNonQuery();
+                }
+            }
+            catch (Exception)
+            {
+
+                throw new Exception("Ocorreu um erro ao executar o método DeleteCoach. Caso o problema persista, entre em contato com o desenvolvedor do sistema.");
+            }
+        }
         public DataTable ListCoaches()
         {
             /*
@@ -148,7 +187,7 @@ namespace SmartGym3
                     listCoachesQuery.Append(" ORDER BY idPersonalTrainer DESC");
 
                     //Transformando em string os comandos acima
-                    listCoaches.CommandText= listCoachesQuery.ToString();
+                    listCoaches.CommandText = listCoachesQuery.ToString();
                     //A ligação dos comandos SQL é a string de conexão
                     listCoaches.Connection = connectionWithDBSmartGym;
 
@@ -162,6 +201,95 @@ namespace SmartGym3
             catch (Exception erro)
             {
                 throw new Exception("Ocorreu um erro no método ListCoaches. Caso o problema persista, entre em contato com o Administrador do Sistema. " + erro);
+
+            }
+        }
+
+        //Método para pesquisa de professores no banco de dados, será do tipo DataTable para armazenar as informações de uma tabela em memória
+        public DataTable SearchName(string namePersonalTrainer)
+        {
+            try
+            {
+                //Variável responsável por receber as informações da query de inserção no banco de dados
+                SqlCommand searchByCoachName = new SqlCommand();
+
+                //Variável responsável por armazenar a query de inserção de novo Coach
+                StringBuilder searchByCoachNameQuery = new StringBuilder();
+
+                //Variável responsável por armazenar as informações retornadas pelo banco, no select, em memórias. As quais serão listadas no DataGridView
+                DataTable listCoachesDataTable = new DataTable();
+
+                //Objeto da classe SqlConnection que realiza a conexão com o banco de dados
+                using (SqlConnection connectionWithDBSmartGym = new SqlConnection(SmartGymDBConnection.stringConnectionSmartGym))
+                {
+                    connectionWithDBSmartGym.Open();
+
+                    //Busca as informações no banco de dados
+                    searchByCoachNameQuery.Append("SELECT * FROM PersonalTrainer");
+                    searchByCoachNameQuery.Append(" WHERE (namePersonalTrainer LIKE '%'+@namePersonalTrainer+'%')");
+                    searchByCoachNameQuery.Append(" ORDER BY idPersonalTrainer DESC");
+
+                    searchByCoachName.Parameters.Add(new SqlParameter("@namePersonalTrainer", @namePersonalTrainer));
+
+                    //Transformando em string os comandos acima
+                    searchByCoachName.CommandText = searchByCoachNameQuery.ToString();
+                    //A ligação dos comandos SQL é a string de conexão
+                    searchByCoachName.Connection = connectionWithDBSmartGym;
+
+                    //O objeto listCoachesDataTable realizará a leitura das informações retornadas na query e a armazenará em memória.
+                    listCoachesDataTable.Load(searchByCoachName.ExecuteReader());
+
+                    return listCoachesDataTable;
+                }
+
+            }
+            catch (Exception erro)
+            {
+                throw new Exception("Ocorreu um erro no método SearchName. Caso o problema persista, entre em contato com o Administrador do Sistema. " + erro);
+
+            }
+        }
+
+        public DataTable SearchCPF(string cpfPersonalTrainer)
+        {
+            try
+            {
+                //Variável responsável por receber as informações da query de inserção no banco de dados
+                SqlCommand searchByCoachCPF = new SqlCommand();
+
+                //Variável responsável por armazenar a query de inserção de novo Coach
+                StringBuilder searchByCoachCPFQuery = new StringBuilder();
+
+                //Variável responsável por armazenar as informações retornadas pelo banco, no select, em memórias. As quais serão listadas no DataGridView
+                DataTable listCoachesDataTable = new DataTable();
+
+                //Objeto da classe SqlConnection que realiza a conexão com o banco de dados
+                using (SqlConnection connectionWithDBSmartGym = new SqlConnection(SmartGymDBConnection.stringConnectionSmartGym))
+                {
+                    connectionWithDBSmartGym.Open();
+
+                    //Busca as informações no banco de dados
+                    searchByCoachCPFQuery.Append("SELECT * FROM PersonalTrainer");
+                    searchByCoachCPFQuery.Append(" WHERE (cpfPersonalTrainer LIKE '%'+@cpfPersonalTrainer+'%')");
+                    searchByCoachCPFQuery.Append(" ORDER BY idPersonalTrainer DESC");
+
+                    searchByCoachCPF.Parameters.Add(new SqlParameter("@cpfPersonalTrainer", @cpfPersonalTrainer));
+
+                    //Transformando em string os comandos acima
+                    searchByCoachCPF.CommandText = searchByCoachCPFQuery.ToString();
+                    //A ligação dos comandos SQL é a string de conexão
+                    searchByCoachCPF.Connection = connectionWithDBSmartGym;
+
+                    //O objeto listCoachesDataTable realizará a leitura das informações retornadas na query e a armazenará em memória.
+                    listCoachesDataTable.Load(searchByCoachCPF.ExecuteReader());
+
+                    return listCoachesDataTable;
+                }
+
+            }
+            catch (Exception erro)
+            {
+                throw new Exception("Ocorreu um erro no método SearchCPF. Caso o problema persista, entre em contato com o Administrador do Sistema. " + erro);
 
             }
         }

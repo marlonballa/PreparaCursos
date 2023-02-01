@@ -10,3 +10,4 @@ C:\Users\PC 01\Desktop\PreparaCursos - Marlon\Desenvolvedor CSharp\CSharp-Advanc
 C:\Users\PC 01\Desktop\PreparaCursos - Marlon\Desenvolvedor CSharp\CSharp-AdvancedOne\SmartGym3\SmartGym3\SmartGym3\obj\Debug\SmartGym3.csproj.CoreCompileInputs.cache
 C:\Users\PC 01\Desktop\PreparaCursos - Marlon\Desenvolvedor CSharp\CSharp-AdvancedOne\SmartGym3\SmartGym3\SmartGym3\obj\Debug\SmartGym3.exe
 C:\Users\PC 01\Desktop\PreparaCursos - Marlon\Desenvolvedor CSharp\CSharp-AdvancedOne\SmartGym3\SmartGym3\SmartGym3\obj\Debug\SmartGym3.pdb
+C:\Users\PC 01\Desktop\PreparaCursos - Marlon\Desenvolvedor CSharp\CSharp-AdvancedOne\SmartGym3\SmartGym3\SmartGym3\obj\Debug\SmartGym3.frmModalidades.resources

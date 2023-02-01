@@ -93,6 +93,7 @@
             this.btnModalidades.Text = "Modalidades";
             this.btnModalidades.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnModalidades.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnModalidades.Click += new System.EventHandler(this.btnModalidades_Click);
             // 
             // toolStripSeparator6
             // 

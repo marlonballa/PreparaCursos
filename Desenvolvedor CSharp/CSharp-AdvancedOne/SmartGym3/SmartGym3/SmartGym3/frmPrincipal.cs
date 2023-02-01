@@ -51,5 +51,11 @@ namespace SmartGym3
 
             }
         }
+
+        private void btnModalidades_Click(object sender, EventArgs e)
+        {
+            frmModalidades frmModalidades = new frmModalidades();
+            frmModalidades.ShowDialog();
+        }
     }
 }

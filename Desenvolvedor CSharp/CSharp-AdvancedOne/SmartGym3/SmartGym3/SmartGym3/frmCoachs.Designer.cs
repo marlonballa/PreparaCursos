@@ -74,6 +74,7 @@
             this.txtSalario = new System.Windows.Forms.TextBox();
             this.personalTrainerTableAdapter = new SmartGym3.SmartGYMDataSetTableAdapters.PersonalTrainerTableAdapter();
             this.txtCodigo = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPersonalTrainer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.personalTrainerBindingSource)).BeginInit();
@@ -270,6 +271,7 @@
             this.txtValorPesquisa.Name = "txtValorPesquisa";
             this.txtValorPesquisa.Size = new System.Drawing.Size(195, 20);
             this.txtValorPesquisa.TabIndex = 60;
+            this.txtValorPesquisa.TextChanged += new System.EventHandler(this.txtValorPesquisa_TextChanged);
             // 
             // label13
             // 
@@ -293,6 +295,7 @@
             // 
             // cbItemPesquisa
             // 
+            this.cbItemPesquisa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbItemPesquisa.FormattingEnabled = true;
             this.cbItemPesquisa.Items.AddRange(new object[] {
             "CPF",
@@ -468,17 +471,30 @@
             // 
             // txtCodigo
             // 
+            this.txtCodigo.Enabled = false;
             this.txtCodigo.Location = new System.Drawing.Point(917, 89);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(79, 20);
             this.txtCodigo.TabIndex = 67;
             this.txtCodigo.Text = "0";
+            this.txtCodigo.Visible = false;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(716, 81);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 68;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // frmCoachs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 537);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.txtSalario);
             this.Controls.Add(this.txtCep);
@@ -567,5 +583,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvColumCommentsPersonalTrainer;
         private System.Windows.Forms.DataGridViewImageColumn btnEdit;
         private System.Windows.Forms.DataGridViewImageColumn btnDelete;
+        private System.Windows.Forms.Button button1;
     }
 }
