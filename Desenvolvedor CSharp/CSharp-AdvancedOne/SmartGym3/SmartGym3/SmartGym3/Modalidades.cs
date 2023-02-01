@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -9,6 +10,9 @@ namespace SmartGym3
 {
     public class Modalidades
     {
+        //O resultado da leitura deverá ser armazenado em uma variável, para que seja possível exibi-la. Por isso devemos instanciar a classe DataTable e utilizar um objeto DataTable, onde seu carregamento receberá como parâmetro o resultado da leitura no banco. 
+		//registeredModalities = Modalidades cadastradas. 
+        DataTable registeredModalities = new DataTable();
         public void SaveNewModalidade(int idPersonalTrainer, decimal valorMensalidade, string nomeModalidade)
         {
 			try
@@ -98,6 +102,49 @@ namespace SmartGym3
 			catch (Exception erro)
 			{
 				throw new Exception("Ocorreu um erro ao executar o método UpdateModalidade. Entre em contato com o Adminisstrador do Sistema!" + erro);
+			}
+		}
+
+		//Método responsável por listar as informações no datagrid view do formulário
+		//Vamos utilizar um DataTable para armazenar em memória estas informações
+		public DataTable ListModalidades()
+		{
+			try
+			{
+                //Variável responsável por receber as informações da query de busca no banco de dados
+                SqlCommand listModalidades = new SqlCommand();
+
+                //Variável responsável por armazenar a query de busca de novo Coach
+                StringBuilder listModalidadesQuery = new StringBuilder();
+
+                //Iniciando a conexão com o banco de dados
+                using (SqlConnection connectionWithDBSmartGym = new SqlConnection(SmartGymDBConnection.stringConnectionSmartGym))
+				{
+					//Abre a conexão com o banco
+					connectionWithDBSmartGym.Open();
+
+					//Instrução SQL responsável por retornar todas as informações guardadas na tabela Modalidades
+					listModalidadesQuery.Append("SELECT * FROM Modalidades ");
+					listModalidadesQuery.Append("ORDER BY idModalidade DESC");
+
+					//A string que construímos é a query que deverá ser executada
+					listModalidades.CommandText = listModalidadesQuery.ToString();
+
+					//O comando deverá ser executado atráves da ligação estabelecida pela string de conexão
+					listModalidades.Connection = connectionWithDBSmartGym;
+
+					//O método ExecuteNonQuery() é utilizado para realizar ações de inserção, alteração ou exclusão de informações em um banco de dados, por isso não é utilizado em querys onde será realizada apenas uma leitura. Para situações assim devemos utilizar o método ExecuteReader();
+			
+					//Vamos utilizar o objeto registeredModalities, em seu método Load, para assim que ele for carregado, realizar a analise dos dados.
+					registeredModalities.Load(listModalidades.ExecuteReader());
+					//Após realizar a leitura, devemos retorná-la 
+					return registeredModalities;
+                }
+
+            }
+			catch (Exception)
+			{
+				throw new Exception ("Ocorreu um erro com o método ListModalidades. Entre em contato com o administrador do sistema!");
 			}
 		}
     }

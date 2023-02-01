@@ -124,20 +124,20 @@
   <data name="btnNovaModalidade.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAI/SURBVEhLrZXBSxtBFMYDhV56NDsiFHrorcfSXvwLevAf
-        SHvy1EtphSAYrNijGjxF2xLpqRYkMUqEKIQcKhgl4Nl686BgcpJkt0lMFsf3beaFzZhNdoMfzCET3vvt
-        zn7zvdCoMpbsT2KpfWUst5OvFuVTtR0qFk2RSskn6mcwGenKpEiXIyJuR8WyLXkRLAtIsdT4RkselRpp
-        gnShviS2y1/Gt8sSS2xVTunJm27I20Tr/PCkIQHYL1hyN1e7DAShJz9jgBdk6ldLZvOW3NqtOiuXN9+r
-        8uEyMpV3BGkOgoTn6/LlvCV/Z6oye2D+VaX+NQiC5mOfq856ETNvx6N3z1RZMPWDGOu1y7GZTvPuiprX
-        I0NihZvN5xn1BsmaczxGvPFfh4RnrX+qxL/YimuHppzY6DTn9QAyU7VVmT9xc7bi9CYBVtrekLl6SpV2
-        fA4r4ozVVo/05mzFD3/Mi36QcKy+p0o7N5Q/GD6gDvFqzlYUP62vOkR8txJOMURNIwzQIcOasx5AftQ+
-        qr/oT2QL+VmHwC1+mrMcyOpt01i3dtQWHQ9SkYjOjdQgsCLc4qe5pxC5/Fr9ILAi3DJSc4iaJrvnpkH4
-        EuFs4RZVEkzIceS5DsH1d+85H5DOWJUFEyBvEq0zbuYEF10W+PlRIMVSfQHDAnnuTsVHgRwfW6/ZihgW
-        yPMuwAtCVlTlw4UBjRnKVsSwQJ4PgvT43I8wOzFD2YrIceS5G4JswfXvuaFBBIh7hgKCPKent3tSMZBC
-        oXtZRikHl5uCmwAAAABJRU5ErkJggg==
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJCSURBVEhLrZVPSxtBGMYDBS/e6s5IofTizaPYi5+gh36B
+        6qknL6UVpRBRsbfG2pMaFMVTA5bEaBX/QMhBKbEEera99WCh66nd7HYT18Vxnt2ZZTNmk93gA3PIhPf9
+        sTPP+0yqW5GM+4pmnN9k4Xp9cJ71iO1UpWLSfJ49ED+TiRQuR2hBf0EX3Sm64DK5yHt3D5BKtf6OL/a1
+        Wi9wSACNJbqtv+nf1hkW3dK/axmnEYY8XXZ+nn6rMwCOyhbbPTAuEkFIQT+XgCjI802H7ZUs9nnX8NZh
+        yRwV5Z1FipfPSF5vtINoMzYbmLHYp6LBvhybJ6I0vtpB0LzvteGtJ+naVf/UTa8oS6ZWEJI1Lvom/OZy
+        PZys/ekaMl3+m3tcFF+wXvOPZ9H+r0K0t9YPURJf0oorpyZ7tOE3D+5AhUz8c0VZPMnm0oovcxzw4Toa
+        krbzotT3OayIMxZbTVKbSyuO5cxfrSBa2t4Xpf6EBhfGL1CFRDWXVqRr1qwKoVlr2SuGMP4SoEI6NZe6
+        A1mtjYu/+J/IFu5nFQK3xGkuBQj52GhoWXNHbPHjQSpyojeRCgRWhFviNI8UIld+VisIrAi3dNUcQp4H
+        56ZA5BDhbOEWUZJMyHHkuQrB+If3vAvkZyzKkgmQ4SXnPAAguPiwwM/3AqlU7Tk8FsjzcCreC+TszBqS
+        VsRjgTwPABEQWFGUdxYeaLyh0op4LJDn7SBNPo8jvJ14Q6UVkePI8zAE2YLxb5rQJAIk/IYCgjxH5Dal
+        YiKlUrc9wCiPyLuqHgAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="btnSavalModalidade.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnSalvarModalidade.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGZSURBVEhL7ZJBS8JgGMf9Bl3sGnSssIRJIX2HoEvXLhKh
@@ -150,7 +150,40 @@
         Orjc7p47gRl5hwBPeTLGb+N2RDJEQYOHAAAAAElFTkSuQmCC
 </value>
   </data>
-  <metadata name="namePersonalTrainer.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="modalidadesBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>503, 17</value>
+  </metadata>
+  <metadata name="smartGYMDataSetBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>273, 17</value>
+  </metadata>
+  <metadata name="smartGYMDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>122, 17</value>
+  </metadata>
+  <metadata name="modalidadesTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>703, 17</value>
+  </metadata>
+  <metadata name="modalidadesBindingSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>898, 17</value>
+  </metadata>
+  <metadata name="modalidadesBindingSource2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 56</value>
+  </metadata>
+  <metadata name="modalidadesBindingSource3.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>224, 56</value>
+  </metadata>
+  <metadata name="idModalidade.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="nomeModalidade.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="nomeCoach.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="idPersonalTrainer.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="valorMensalidade.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="btnEdit.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -183,22 +216,4 @@
         gg==
 </value>
   </data>
-  <metadata name="modalidadesBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>503, 17</value>
-  </metadata>
-  <metadata name="smartGYMDataSetBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>273, 17</value>
-  </metadata>
-  <metadata name="smartGYMDataSetBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>273, 17</value>
-  </metadata>
-  <metadata name="smartGYMDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>122, 17</value>
-  </metadata>
-  <metadata name="smartGYMDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>122, 17</value>
-  </metadata>
-  <metadata name="modalidadesTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>703, 17</value>
-  </metadata>
 </root>

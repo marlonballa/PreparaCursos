@@ -30,15 +30,16 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmModalidades));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnNovaModalidade = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnSavalModalidade = new System.Windows.Forms.ToolStripButton();
+            this.btnSalvarModalidade = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cbCoachModalidade = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txNomeModalidade = new System.Windows.Forms.TextBox();
+            this.txtNomeModalidade = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtMensalidadeModalidade = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -49,25 +50,31 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.cbItemPesquisa = new System.Windows.Forms.ComboBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.modalidadesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.smartGYMDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.smartGYMDataSet = new SmartGym3.SmartGYMDataSet();
             this.modalidadesTableAdapter = new SmartGym3.SmartGYMDataSetTableAdapters.ModalidadesTableAdapter();
-            this.idModalidadeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomeModalidadeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idPersonalTrainerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.namePersonalTrainer = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valorMensalidadeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.modalidadesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.modalidadesBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.modalidadesBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
+            this.dtgModalidades = new System.Windows.Forms.DataGridView();
+            this.idModalidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomeModalidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomeCoach = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idPersonalTrainer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valorMensalidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnEdit = new System.Windows.Forms.DataGridViewImageColumn();
             this.btnDelete = new System.Windows.Forms.DataGridViewImageColumn();
             this.toolStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.modalidadesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.smartGYMDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.smartGYMDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.modalidadesBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.modalidadesBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.modalidadesBindingSource3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgModalidades)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -75,7 +82,7 @@
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnNovaModalidade,
             this.toolStripSeparator5,
-            this.btnSavalModalidade,
+            this.btnSalvarModalidade,
             this.toolStripSeparator6});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
@@ -94,23 +101,25 @@
             this.btnNovaModalidade.Text = "Novo";
             this.btnNovaModalidade.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnNovaModalidade.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnNovaModalidade.Click += new System.EventHandler(this.btnNovaModalidade_Click);
             // 
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
             this.toolStripSeparator5.Size = new System.Drawing.Size(6, 70);
             // 
-            // btnSavalModalidade
+            // btnSalvarModalidade
             // 
-            this.btnSavalModalidade.AutoSize = false;
-            this.btnSavalModalidade.Image = ((System.Drawing.Image)(resources.GetObject("btnSavalModalidade.Image")));
-            this.btnSavalModalidade.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btnSavalModalidade.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnSavalModalidade.Name = "btnSavalModalidade";
-            this.btnSavalModalidade.Size = new System.Drawing.Size(79, 67);
-            this.btnSavalModalidade.Text = "Salvar";
-            this.btnSavalModalidade.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnSavalModalidade.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnSalvarModalidade.AutoSize = false;
+            this.btnSalvarModalidade.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvarModalidade.Image")));
+            this.btnSalvarModalidade.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnSalvarModalidade.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnSalvarModalidade.Name = "btnSalvarModalidade";
+            this.btnSalvarModalidade.Size = new System.Drawing.Size(79, 67);
+            this.btnSalvarModalidade.Text = "Salvar";
+            this.btnSalvarModalidade.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnSalvarModalidade.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnSalvarModalidade.Click += new System.EventHandler(this.btnSavalModalidade_Click);
             // 
             // toolStripSeparator6
             // 
@@ -121,7 +130,7 @@
             // 
             this.groupBox1.Controls.Add(this.cbCoachModalidade);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.txNomeModalidade);
+            this.groupBox1.Controls.Add(this.txtNomeModalidade);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txtMensalidadeModalidade);
             this.groupBox1.Controls.Add(this.label2);
@@ -156,12 +165,12 @@
             this.label4.TabIndex = 70;
             this.label4.Text = "Coach:";
             // 
-            // txNomeModalidade
+            // txtNomeModalidade
             // 
-            this.txNomeModalidade.Location = new System.Drawing.Point(68, 49);
-            this.txNomeModalidade.Name = "txNomeModalidade";
-            this.txNomeModalidade.Size = new System.Drawing.Size(158, 20);
-            this.txNomeModalidade.TabIndex = 69;
+            this.txtNomeModalidade.Location = new System.Drawing.Point(68, 49);
+            this.txtNomeModalidade.Name = "txtNomeModalidade";
+            this.txtNomeModalidade.Size = new System.Drawing.Size(158, 20);
+            this.txtNomeModalidade.TabIndex = 69;
             // 
             // label3
             // 
@@ -261,28 +270,6 @@
             this.cbItemPesquisa.Size = new System.Drawing.Size(195, 21);
             this.cbItemPesquisa.TabIndex = 61;
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idModalidadeDataGridViewTextBoxColumn,
-            this.nomeModalidadeDataGridViewTextBoxColumn,
-            this.idPersonalTrainerDataGridViewTextBoxColumn,
-            this.namePersonalTrainer,
-            this.valorMensalidadeDataGridViewTextBoxColumn,
-            this.btnEdit,
-            this.btnDelete});
-            this.dataGridView1.DataSource = this.modalidadesBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 179);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(984, 346);
-            this.dataGridView1.TabIndex = 13;
-            // 
             // modalidadesBindingSource
             // 
             this.modalidadesBindingSource.DataMember = "Modalidades";
@@ -302,70 +289,116 @@
             // 
             this.modalidadesTableAdapter.ClearBeforeFill = true;
             // 
-            // idModalidadeDataGridViewTextBoxColumn
+            // modalidadesBindingSource1
             // 
-            this.idModalidadeDataGridViewTextBoxColumn.DataPropertyName = "idModalidade";
-            this.idModalidadeDataGridViewTextBoxColumn.HeaderText = "Código:";
-            this.idModalidadeDataGridViewTextBoxColumn.Name = "idModalidadeDataGridViewTextBoxColumn";
-            this.idModalidadeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idModalidadeDataGridViewTextBoxColumn.Width = 80;
+            this.modalidadesBindingSource1.DataMember = "Modalidades";
+            this.modalidadesBindingSource1.DataSource = this.smartGYMDataSetBindingSource;
             // 
-            // nomeModalidadeDataGridViewTextBoxColumn
+            // modalidadesBindingSource2
             // 
-            this.nomeModalidadeDataGridViewTextBoxColumn.DataPropertyName = "nomeModalidade";
-            this.nomeModalidadeDataGridViewTextBoxColumn.HeaderText = "Nome da Modalidade:";
-            this.nomeModalidadeDataGridViewTextBoxColumn.Name = "nomeModalidadeDataGridViewTextBoxColumn";
-            this.nomeModalidadeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nomeModalidadeDataGridViewTextBoxColumn.Width = 280;
+            this.modalidadesBindingSource2.DataMember = "Modalidades";
+            this.modalidadesBindingSource2.DataSource = this.smartGYMDataSetBindingSource;
             // 
-            // idPersonalTrainerDataGridViewTextBoxColumn
+            // modalidadesBindingSource3
             // 
-            this.idPersonalTrainerDataGridViewTextBoxColumn.DataPropertyName = "idPersonalTrainer";
-            this.idPersonalTrainerDataGridViewTextBoxColumn.HeaderText = "idPersonalTrainer";
-            this.idPersonalTrainerDataGridViewTextBoxColumn.Name = "idPersonalTrainerDataGridViewTextBoxColumn";
-            this.idPersonalTrainerDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idPersonalTrainerDataGridViewTextBoxColumn.Visible = false;
-            this.idPersonalTrainerDataGridViewTextBoxColumn.Width = 280;
+            this.modalidadesBindingSource3.DataMember = "Modalidades";
+            this.modalidadesBindingSource3.DataSource = this.smartGYMDataSetBindingSource;
             // 
-            // namePersonalTrainer
+            // dtgModalidades
             // 
-            this.namePersonalTrainer.DataPropertyName = "NamePersonalTrainer";
-            this.namePersonalTrainer.HeaderText = "Coach:";
-            this.namePersonalTrainer.Name = "namePersonalTrainer";
-            this.namePersonalTrainer.ReadOnly = true;
+            this.dtgModalidades.AllowUserToAddRows = false;
+            this.dtgModalidades.AllowUserToDeleteRows = false;
+            this.dtgModalidades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgModalidades.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idModalidade,
+            this.nomeModalidade,
+            this.nomeCoach,
+            this.idPersonalTrainer,
+            this.valorMensalidade,
+            this.btnEdit,
+            this.btnDelete});
+            this.dtgModalidades.Location = new System.Drawing.Point(12, 179);
+            this.dtgModalidades.Name = "dtgModalidades";
+            this.dtgModalidades.ReadOnly = true;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgModalidades.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dtgModalidades.RowHeadersVisible = false;
+            this.dtgModalidades.Size = new System.Drawing.Size(984, 346);
+            this.dtgModalidades.TabIndex = 13;
             // 
-            // valorMensalidadeDataGridViewTextBoxColumn
+            // idModalidade
             // 
-            this.valorMensalidadeDataGridViewTextBoxColumn.DataPropertyName = "valorMensalidade";
-            this.valorMensalidadeDataGridViewTextBoxColumn.HeaderText = "Mensalidade:";
-            this.valorMensalidadeDataGridViewTextBoxColumn.Name = "valorMensalidadeDataGridViewTextBoxColumn";
-            this.valorMensalidadeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idModalidade.DataPropertyName = "idModalidade";
+            this.idModalidade.HeaderText = "Código:";
+            this.idModalidade.Name = "idModalidade";
+            this.idModalidade.ReadOnly = true;
+            this.idModalidade.Width = 80;
+            // 
+            // nomeModalidade
+            // 
+            this.nomeModalidade.DataPropertyName = "nomeModalidade";
+            this.nomeModalidade.HeaderText = "Modalidade:";
+            this.nomeModalidade.Name = "nomeModalidade";
+            this.nomeModalidade.ReadOnly = true;
+            this.nomeModalidade.Width = 292;
+            // 
+            // nomeCoach
+            // 
+            this.nomeCoach.DataPropertyName = "NamePersonalTrainer";
+            this.nomeCoach.HeaderText = "Coach:";
+            this.nomeCoach.Name = "nomeCoach";
+            this.nomeCoach.ReadOnly = true;
+            this.nomeCoach.Width = 292;
+            // 
+            // idPersonalTrainer
+            // 
+            this.idPersonalTrainer.DataPropertyName = "idPersonalTrainer";
+            this.idPersonalTrainer.HeaderText = "Matrícula:";
+            this.idPersonalTrainer.Name = "idPersonalTrainer";
+            this.idPersonalTrainer.ReadOnly = true;
+            this.idPersonalTrainer.Width = 80;
+            // 
+            // valorMensalidade
+            // 
+            this.valorMensalidade.DataPropertyName = "valorMensalidade";
+            this.valorMensalidade.HeaderText = "Mensalidade:";
+            this.valorMensalidade.Name = "valorMensalidade";
+            this.valorMensalidade.ReadOnly = true;
+            this.valorMensalidade.Width = 80;
             // 
             // btnEdit
             // 
-            this.btnEdit.DataPropertyName = "idModalidade";
-            this.btnEdit.HeaderText = "Editar";
+            this.btnEdit.HeaderText = "Editar:";
             this.btnEdit.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.Image")));
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.ReadOnly = true;
+            this.btnEdit.Width = 80;
             // 
             // btnDelete
             // 
-            this.btnDelete.DataPropertyName = "idModalidade";
-            this.btnDelete.HeaderText = "Deletar";
+            this.btnDelete.HeaderText = "Excluir:";
             this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.ReadOnly = true;
+            this.btnDelete.Width = 80;
             // 
             // frmModalidades
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 537);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dtgModalidades);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.toolStrip1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmModalidades";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SmartGym - Controle de Modalidades";
@@ -376,10 +409,13 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.modalidadesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.smartGYMDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.smartGYMDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.modalidadesBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.modalidadesBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.modalidadesBindingSource3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgModalidades)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -390,14 +426,13 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton btnNovaModalidade;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
-        private System.Windows.Forms.ToolStripButton btnSavalModalidade;
+        private System.Windows.Forms.ToolStripButton btnSalvarModalidade;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ComboBox cbCoachModalidade;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txNomeModalidade;
+        private System.Windows.Forms.TextBox txtNomeModalidade;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtMensalidadeModalidade;
         private System.Windows.Forms.Label label2;
@@ -411,11 +446,15 @@
         private SmartGYMDataSet smartGYMDataSet;
         private System.Windows.Forms.BindingSource modalidadesBindingSource;
         private SmartGYMDataSetTableAdapters.ModalidadesTableAdapter modalidadesTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idModalidadeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nomeModalidadeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idPersonalTrainerDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn namePersonalTrainer;
-        private System.Windows.Forms.DataGridViewTextBoxColumn valorMensalidadeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource modalidadesBindingSource1;
+        private System.Windows.Forms.BindingSource modalidadesBindingSource2;
+        private System.Windows.Forms.BindingSource modalidadesBindingSource3;
+        private System.Windows.Forms.DataGridView dtgModalidades;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idModalidade;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomeModalidade;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomeCoach;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idPersonalTrainer;
+        private System.Windows.Forms.DataGridViewTextBoxColumn valorMensalidade;
         private System.Windows.Forms.DataGridViewImageColumn btnEdit;
         private System.Windows.Forms.DataGridViewImageColumn btnDelete;
     }
