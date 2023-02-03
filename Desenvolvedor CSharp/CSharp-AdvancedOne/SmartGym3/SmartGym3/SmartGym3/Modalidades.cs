@@ -59,7 +59,7 @@ namespace SmartGym3
 			}
         }
 
-		public void UpdateModalidee(int idModalidade, int idPersonalTrainer, decimal valorMensalidade, string nomeModalidade)
+		public void UpdateModalidade(int idModalidade, int idPersonalTrainer, decimal valorMensalidade, string nomeModalidade)
 		{
 			try
 			{
@@ -80,7 +80,7 @@ namespace SmartGym3
 
 					//Criando a string de inserção no banco de dados
 					updateModalidadeQuery.Append("UPDATE Modalidades ");
-					updateModalidadeQuery.Append("SET idPersonalTrainer = @idPersonalTrainer, valorMensalidade = @valorMensalidade, nomeModalidade = @nomeModalidade) ");
+					updateModalidadeQuery.Append("SET (idPersonalTrainer = @idPersonalTrainer, valorMensalidade = @valorMensalidade, nomeModalidade = @nomeModalidade) ");
 					updateModalidadeQuery.Append("WHERE idModalidade = @idModalidade");
 
                     //Vamos relacionar as colunas do banco de dados com os parâmetros que estão sendo recebidos pelo construtor do método.
@@ -101,7 +101,7 @@ namespace SmartGym3
 			}
 			catch (Exception erro)
 			{
-				throw new Exception("Ocorreu um erro ao executar o método UpdateModalidade. Entre em contato com o Adminisstrador do Sistema!" + erro);
+				throw new Exception("Ocorreu um erro ao executar o método UpdateModalidade. Entre em contato com o Adminisstrador do Sistema! " + erro);
 			}
 		}
 
@@ -124,8 +124,10 @@ namespace SmartGym3
 					connectionWithDBSmartGym.Open();
 
 					//Instrução SQL responsável por retornar todas as informações guardadas na tabela Modalidades
-					listModalidadesQuery.Append("SELECT * FROM Modalidades ");
-					listModalidadesQuery.Append("ORDER BY idModalidade DESC");
+					listModalidadesQuery.Append("SELECT Modalidades.idModalidade, Modalidades.nomeModalidade, Modalidades.valorMensalidade, Modalidades.IdPersonalTrainer, PersonalTrainer.NamePersonalTrainer ");
+					//Realizando a junção da tabela Modalidades com a tabela Personal Trainer e adicionando uma condição que verifica se os dois valores consultados (em ambas as tabelas) são iguais. 
+                    listModalidadesQuery.Append("FROM (Modalidades INNER JOIN PersonalTrainer ON Modalidades.idPersonalTrainer = PersonalTrainer.IdPersonalTrainer)");
+                    listModalidadesQuery.Append("ORDER BY Modalidades.idModalidade DESC");
 
 					//A string que construímos é a query que deverá ser executada
 					listModalidades.CommandText = listModalidadesQuery.ToString();
@@ -145,6 +147,43 @@ namespace SmartGym3
 			catch (Exception)
 			{
 				throw new Exception ("Ocorreu um erro com o método ListModalidades. Entre em contato com o administrador do sistema!");
+			}
+		}
+
+		public void DeleteModality(int idModalidade)
+		{
+			try
+			{
+				//Variável responsável por receber as informações da query que apagará o registro no banco de dados
+				SqlCommand deleteModality = new SqlCommand();
+
+				//Variável responsável por armazenar a query de exclusão
+				StringBuilder deleteModalityQuery = new StringBuilder();
+
+				//Objeto da classe SqlConnection que realiza a conexão com o banco de dados
+				using (SqlConnection connectionWithDBSmartGym = new SqlConnection(SmartGymDBConnection.stringConnectionSmartGym))
+				{
+					//Abre a conexão com o banco de dados
+					connectionWithDBSmartGym.Open();
+
+					//Query responsável por realizar a exclusão da modalidade no banco de dados
+					deleteModalityQuery.Append("DELETE FROM Modalidades ");
+                    deleteModalityQuery.Append("WHERE (idModalidade = @idModalidade");
+
+					//Relacionando o parâmetro do método com a coluna da tabela
+					deleteModality.Parameters.Add(new SqlParameter("@idModalidade", idModalidade));
+
+					//Transforma a Query em um comando SQL
+					deleteModality.CommandText = deleteModalityQuery.ToString();
+					//Informa qual conexão com o banco deverá ser utilizada
+					deleteModality.Connection = connectionWithDBSmartGym;
+					//Executa a query
+					deleteModality.ExecuteNonQuery();
+                }
+            }
+			catch (Exception)
+			{
+				throw new Exception("Ocorreu um erro ao executar o método DeleteModality. Entre em contato com o administrador do sistema.");
 			}
 		}
     }

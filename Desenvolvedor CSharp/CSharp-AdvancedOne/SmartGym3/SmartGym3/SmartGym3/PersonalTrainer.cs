@@ -131,7 +131,7 @@ namespace SmartGym3
         {
             try
             {
-                //Variável responsável por receber as informações da query de inserção no banco de dados
+                //Variável responsável por receber as informações da query de exclusão no banco de dados
                 SqlCommand deleteCoach = new SqlCommand();
 
                 //Variável responsável por armazenar a query de inserção de novo Coach

@@ -82,14 +82,29 @@ namespace SmartGym3
                 }
                 else
                 {
-                    //É neste momento que referenciamos a ligação do componente com os respectivos campos das tabelas
-                    //a propriedade SelectedValue retorna o ID do Item selecionado no ComboBox
-                    Modalidade.SaveNewModalidade(Convert.ToInt32(cbCoachModalidade.SelectedValue), Convert.ToDecimal(txtMensalidadeModalidade.Text), txtNomeModalidade.Text);
+                    if (txtCodModalidade.Text == "0")
+                    {
+                        //Vamos verificar se o valor do campo código é igual ou diferente a 0, para podermos o caminho de um novo cadastro ou de uma atualização
+                        //É neste momento que referenciamos a ligação do componente com os respectivos campos das tabelas
+                        //a propriedade SelectedValue retorna o ID do Item selecionado no ComboBox
+                        Modalidade.SaveNewModalidade(Convert.ToInt32(cbCoachModalidade.SelectedValue), Convert.ToDecimal(txtMensalidadeModalidade.Text), txtNomeModalidade.Text);
 
-                    MessageBox.Show("Modalidade salva com sucesso!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    //Carrega as modalidades cadastradas no banco e mostra no datagridview
-                    ListModalidades();
-                    ClearFrmModalities();
+                        MessageBox.Show("Modalidade salva com sucesso!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        //Carrega as modalidades cadastradas no banco e mostra no datagridview
+                        ListModalidades();
+                        ClearFrmModalities();
+                    }
+                    else
+                    {
+                        //Passa para o construtor as informações da modalidade, atualizando o que teve alteração. 
+                        Modalidade.UpdateModalidade(Convert.ToInt32(txtCodModalidade.Text), Convert.ToInt32(cbCoachModalidade.SelectedValue), Convert.ToDecimal(txtMensalidadeModalidade.Text), txtNomeModalidade.Text);
+
+                        MessageBox.Show("Modalidade alterada com sucesso!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        //Carrega as modalidades cadastradas no banco e mostra no datagridview
+                        ListModalidades();
+                        ClearFrmModalities();
+                    }
+     
                 }                
             }
             catch (Exception erro)
@@ -112,6 +127,53 @@ namespace SmartGym3
         private void btnNovaModalidade_Click(object sender, EventArgs e)
         {
             ClearFrmModalities();
+        }
+
+        private void dtgModalidades_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //A variável sender é responsável por informar o tipo do objeto que recebeu o clique. 
+            //Enquanto a variável "e" obtem todas as propriedades do objeto clicado. 
+            try
+            {
+                //Vamos verificar se o usuário clicou na coluna que possui o icone de "Editar"
+                if (dtgModalidades.Columns[e.ColumnIndex].Name == "btnEdit")
+                {
+                    MessageBox.Show("As informações a serem editadas estão na caixa: 'Informações da Modalidade'!", "Editar informações", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    //Carrega todas as informações dao DataGridView para os TextBoxes do formulário. 
+                    txtCodModalidade.Text = dtgModalidades.Rows[e.RowIndex].Cells["idModalidade"].Value.ToString();
+                    txtMensalidadeModalidade.Text = dtgModalidades.Rows[e.RowIndex].Cells["valorMensalidade"].Value.ToString();
+                    txtNomeModalidade.Text = dtgModalidades.Rows[e.RowIndex].Cells["nomeModalidade"].Value.ToString();
+                    cbCoachModalidade.Text = dtgModalidades.Rows[e.RowIndex].Cells["nomeCoach"].Value.ToString();
+
+                }
+                else if (dtgModalidades.Columns[e.ColumnIndex].Name == "btnDelete")
+                {
+                    MessageBox.Show("Deseja Realmente Excluir?", "Excluir Modalidade:", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                    try
+                    {
+                        //Como o método para exclusão de Modalidades está na classe Modalidades, precisamos instanciá-la para acessarmos seus métodos. 
+                        Modalidades Modalidade = new Modalidades();
+
+                        //Acessando o método de Exclusão
+                        Modalidade.DeleteModality(Convert.ToInt32(dtgModalidades.Rows[e.RowIndex].Cells["idModalidade"].Value));
+
+                        //Mensagem de aviso que a exclusão aconteceu da forma correta. 
+                        MessageBox.Show("A Modalidade foi excluída com sucesso!", "Exclusão realizada!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                    catch (Exception)
+                    {
+
+                        throw;
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
         }
     }
 }

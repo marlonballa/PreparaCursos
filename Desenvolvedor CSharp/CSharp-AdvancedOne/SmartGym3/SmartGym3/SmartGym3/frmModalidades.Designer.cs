@@ -331,6 +331,7 @@
             this.dtgModalidades.RowHeadersVisible = false;
             this.dtgModalidades.Size = new System.Drawing.Size(984, 346);
             this.dtgModalidades.TabIndex = 13;
+            this.dtgModalidades.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgModalidades_CellContentClick);
             // 
             // idModalidade
             // 
