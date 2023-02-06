@@ -1,0 +1,96 @@
+## O que é o Cordova 
+    Apache Cordova é uma plataforma de desenvolvimento de aplicativos móveis que permite a criação de aplicativos para múltiplas plataformas com tecnologias web (HTML, CSS, JavaScript). Ele fornece uma camada de abstração para acessar recursos nativos do dispositivo (câmera, GPS, etc.) através de plugins, permitindo que um único código base seja executado em diferentes sistemas operacionais móveis.
+
+## Android Studio
+    É a ferramena oficial de desenvolvimento para Android, da Google. 
+    Precisamos instalar e configurar o Java JDK (Java Development Kit) que serve como base para o desenvolvimento da plataforma. 
+    - Cada versão do android possui sua própria SDK (Software Development Kit). 
+    - AVD: Android Virtual Device (emula um dispositivo móvel)
+
+## Adicionando as Variáveis do Sistema e as Variáveis de Ambiente do Android Studio
+
+    Se você está recebendo a mensagem de que o Android Studio não está instalado, mas você sabe que ele está instalado em sua máquina, provavelmente há uma questão de variáveis de ambiente. O Cordova precisa saber onde o Android Studio está instalado para poder usá-lo para emular o aplicativo.
+
+    Você pode corrigir esse problema adicionando a variável de ambiente ANDROID_HOME ao seu sistema. Esta variável deve apontar para a pasta raiz do Android Studio em seu sistema. Por exemplo, se o Android Studio estiver instalado em C:\Program Files\Android\Android Studio, a variável deve ser definida como C:\Program Files\Android\Android Studio\.
+
+    Além disso, você precisa adicionar o caminho da pasta platform-tools do Android ao seu PATH. Por exemplo, se o Android Studio estiver instalado em C:\Program Files\Android\Android Studio, você deve adicionar C:\Program Files\Android\Android Studio\platform-tools ao seu PATH.
+
+    Após fazer essas alterações, reinicie seu terminal e execute o comando cordova emulate android novamente. O Cordova agora deve ser capaz de encontrar o Android Studio e usá-lo para emular o aplicativo.
+
+## O que é o Gradle e qual a sua relação com o Android Studio
+
+    Gradle é uma ferramenta de automação de build que é amplamente utilizada em projetos de desenvolvimento de software, especialmente em projetos Android. Ele é responsável por gerenciar as dependências do projeto, compilar o código-fonte, executar testes, gerar artefatos de build, entre outras tarefas.
+
+    O Android Studio é o ambiente de desenvolvimento integrado (IDE) oficial para desenvolvimento de aplicativos Android. O Gradle é usado como o sistema de build padrão para projetos Android no Android Studio. Ele lê as configurações de build do arquivo build.gradle e constrói o projeto de acordo com as especificações nele contidas.
+
+    Além disso, o Gradle oferece recursos avançados como resolução automática de dependências, incremental build, build cache e muito mais. Isso torna mais fácil para os desenvolvedores escrever e manter seus projetos, aumentando a eficiência do processo de build. Portanto, a relação entre o Gradle e o Android Studio é que o Gradle é a ferramenta de build padrão para projetos Android no Android Studio, tornando o desenvolvimento mais fácil e eficiente.
+
+## Entendendo a diferença entre o Capacitor e o Cordova 
+
+    O Capacitor é uma plataforma de desenvolvimento de aplicativos da Ionic que foi criada para ser uma alternativa mais moderna e eficiente ao Cordova. Ele oferece uma experiência de desenvolvimento mais simples e uma documentação mais clara. Além disso, o Capacitor é mais fácil de configurar e integrar com outras tecnologias, como o Angular.
+
+    O Cordova, por outro lado, é uma plataforma de desenvolvimento de aplicativos mais antiga e é amplamente utilizada na comunidade de desenvolvimento de aplicativos. Ele oferece uma ampla gama de plugins e recursos para personalizar a funcionalidade do seu aplicativo. Além disso, o Cordova é altamente compatível com as versões mais antigas do iOS e Android, o que pode ser importante para alguns projetos.
+
+    Em resumo, se você está procurando uma experiência de desenvolvimento mais simples e uma documentação mais clara, o Capacitor pode ser a melhor escolha para o seu projeto. Se precisa de mais recursos e compatibilidade com versões antigas do iOS e Android, o Cordova pode ser a melhor escolha.
+
+## Como remover o Capacitor do projeto
+    Você pode remover o Capacitor de um projeto Ionic seguindo os seguintes passos:
+
+    Remova a dependência do Capacitor: Abra o arquivo package.json do seu projeto e remova a linha que referencia o Capacitor. Em seguida, execute o comando npm uninstall @ionic/capacitor para remover a dependência do Capacitor do seu projeto.
+
+    Remova o arquivo capacitor.config.json: Abra o diretório raiz do seu projeto e remova o arquivo capacitor.config.json.
+
+    Remova os arquivos gerados pelo Capacitor: Remova os arquivos gerados pelo Capacitor do seu projeto. Esses arquivos estão normalmente em um diretório chamado capacitor.config.json.
+
+    Remova as referências ao Capacitor no código: Verifique se não há referências ao Capacitor no seu código. Se houver, remova-as manualmente.
+
+    Com esses passos, você pode remover o Capacitor de um projeto Ionic. Lembre-se de fazer backup dos arquivos importantes antes de prosseguir com a remoção, pois a remoção do Capacitor pode afetar as dependências e configurações do seu projeto.
+
+    ## Removendo o Capacitor de um projeto com Angular
+
+        Para remover o Capacitor de um projeto Ionic utilizando Angular, você precisa seguir os seguintes passos:
+
+        Remova o Capacitor de sua dependência de pacotes: Abra o arquivo package.json em seu projeto e remova as dependências do Capacitor.
+
+        Remova as configurações do Capacitor: Remova as configurações do Capacitor em seu arquivo ionic.config.json.
+
+        Remova as pastas do Capacitor: Remova as pastas /android e /ios do seu projeto.
+
+        Remova as chamadas do Capacitor: Remova as chamadas do Capacitor em seu arquivo main.ts.
+
+        Instale o Cordova: Instale o Cordova em seu projeto executando o comando npm install -g cordova.
+
+        Adicione as plataformas: Adicione as plataformas para as quais você deseja construir o seu aplicativo usando o comando cordova platform add <nome-da-plataforma>, onde <nome-da-plataforma> pode ser ios ou android.
+
+        Com esses passos, você deve ter removido o Capacitor e instalado o Cordova em seu projeto Ionic Angular. Certifique-se de testar sua aplicação após as mudanças para garantir que ela esteja funcionando corretamente.
+
+## Desabilitando o Capacitor de um projeto
+
+    ionic integrations disable capacitor
+
+## Criando um novo Projeto
+
+    Com o JKD e o Android Studio devidamente instalados, podemos começar a desenvolver nossas aplicações. 
+
+    Para instalar o ionic:
+        npm i -g @ionic/cli
+
+    Para instalar o Cordova
+        npm install -g cordova
+
+    Para criar um novo Projeto:
+        ionic start nameApp blank
+        * a flag "blank" indica que criaremos um novo projeto em branco. 
+
+    Para testar o android na aplicação, precisamos adicionar sua plataforma 
+        Até a versão 5:
+        ionic cordova platform add android
+
+        A partir da versão 5 (com Capacitor):
+        ionic platform add android
+
+    Para emular a aplicação:
+        ionic cordova emulate android
+
+    Devemos colocar a "Execução Nativa" em nossas variáveis de ambiente. Isto pode ser feito de forma global com:
+        npm i -g native-run
