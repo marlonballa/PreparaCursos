@@ -1,0 +1,27 @@
+## Criando um novo Component
+    - ng generate component nameComponent 
+    - Cria um novo componente, dentro da pasta app. 
+
+## Definindo qual Component deve ser carregado pela Main
+    - O arquivo main.ts é o arquivo principal da aplicação, pois é ele quem será carregado assim que a aplicação for iniciada. Por padrão o Angular inicializa o conteúdo do Component App, mas podemos mudar esta caracteristica. 
+    - Ao rodarmos o comando "ng generate component nameComponent", automaticamente acontece a criação da pasta com todos os arquivos necessários para o uso do component e dentro do arquivo app.module.ts da pasta app, é feita a importação desse component e também a sua declaração. 
+
+    Em app.module.ts
+
+        @NgModule({
+        declarations: [
+            AppComponent,
+            MercadoriasComponent,
+            MercadoriasComponentComponent
+        ],
+        imports: [
+            BrowserModule
+        ],
+        providers: [],
+        bootstrap: [AquiEntraOComponentQueSeraInicializadoQuandoAAplicacaoForCarregada]
+        })
+
+        Após inicializar o component devemos informar onde ele será exibido. 
+        Seletor: Responsável por permitir que o component seja acessado pela aplicação. 
+
+        Em index.html, basta trocar o seletor do component app pelo seletor do component que desejamos exibir. 

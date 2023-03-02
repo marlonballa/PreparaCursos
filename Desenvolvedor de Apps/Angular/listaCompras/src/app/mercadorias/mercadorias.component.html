@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="title">
+        <h1>{{title}}</h1>
+        <span class="material-symbols-outlined">
+            add_shopping_cart
+        </span>
+    </div>
+    <div>
+        <div class="shoppingList">
+            <!--COLUNAS-->
+            <div class="shoppingListHeader">
+                <div class="shoppingListHeaderItems">
+                    <span>Código</span>
+                    <span>Nome da Mercadoria</span>
+                    <span>Quantidade em Estoque</span>
+                    <span>Quantidade Mínima</span>
+                    <span>Precisa Comprar?</span>
+                    <!-- <span>Index</span> -->
+                </div>
+            </div>
+            <!--LINHAS-->
+            <div class="shoppingListBody">
+                <div class="shoppingListRow" 
+                     *ngFor="let mercadoria of mercadorias; let i = index; let evenLine = even; odd as oddLine"
+                     [ngClass]="{evenLine:evenLine, oddLine:oddLine}">
+                    <span class="shoppingListDatas"> {{mercadoria.id}} </span>
+                    <span class="shoppingListDatas"> {{mercadoria.descricao}} </span>
+                    <span class="shoppingListDatas"> {{mercadoria.quantidade}} </span>
+                    <span class="shoppingListDatas"> {{mercadoria.quantidadeMinima}} </span>
+                    <span class="shoppingListDatas" style="font-weight: bold;"> 
+                        <span *ngIf="mercadoria.quantidade < mercadoria.quantidadeMinima" style="color:rgba(255, 0, 0, 0.75);">
+                            SIM
+                        </span>
+                        <span *ngIf="mercadoria.quantidade >= mercadoria.quantidadeMinima" style="color:mediumspringgreen">
+                            NÃO
+                        </span>
+                    </span>
+                    <!-- <span class="shoppingListDatas"> 
+                        {{i}} 
+                        <span *ngIf="firstItem"> - Primeiro Item</span> 
+                        <span *ngIf="lastItem"> - Último Item</span>
+                        let i = index; let firstItem = first; last as lastItem -> Código esta na div.shoppingRowList
+                    </span> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

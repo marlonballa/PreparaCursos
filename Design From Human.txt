@@ -1,0 +1,217 @@
+Erros de Design na TokStok (https://www.youtube.com/shorts/Q6SOVKCs3OI)
+	- Avisa que o produto está indisponível apenas quando o usuário está para finalizar a compra
+	(Este formato mata a conversão, o sentimento de incapacidade, de não conseguir algo, gera frustração e raiva, o que pode levar o usuário a desistir de comprar outros produtos ou de continuar a usar seu software)
+	- O software é lento demais! A demora no carregamento das informações, leva o usuário a ter "aversão à ociosidade" e 40% deles abandonam a aplicação sem esperar a tela terminar de carregar. 
+	- Heurísticas de Nielsem:
+		- Visibilidade do Status do Sistema: Você precisa manter o usuário informado sobre o que está acontecendo!
+
+#######################################################################################################################################################################
+
+Como criar designs que podem melhorar o resultados de um negócio na internet:
+	Com base em psicologia aplicada
+	- Comece definindo o objetivo principal e o secundário.
+		- Porque 1000 pessoas visitam o meu site, mas tenho um taxa de apenas 0.5% de conversão?
+	- No design, 80% do trabalho é entender o problema e 20% é sobre projetar! Afinal, se você não entendeu qual é o problema, como vai criar soluções pra isso?
+	- Projetos de Design devem ser: Estudados, pesquisados, analisados, hipotetizados, rascunhados, projetados, prototipados, testados, finalizados e acompanhados.
+ 	- Planejar todo o projeto.
+	- Primeiro devemos entender o problema para depois sair desenhando as telas!
+		- Uma das formas de fazer pesquisa, é a utilização de formulários, para que o usuário nos mostre os desafios que enfrenta 
+		- A analise dos dados coletados leva a possíveis caminhos de melhorias. 
+			- Melhor do que quantidade, é a qualidade. Caso seja necessário devemos entrar em contato direto com o usuário, para ouvir dele as experiências que tem ao usar o software! 
+			- O Google Meet é uma forma de fazer isso, junto com o TL:DV, que permite gravar as conversar, transcrever o áudio e fazer anotações em tempo real.
+	- Com a investigação feita, devemos analisar psicologicamente os rascunhos e as propostas de solução. Para encontrar algo que resolva o problema do usuário e faça sentido para o negócio. 
+	- Poder persuasão do site: A "Prova Social" é o que fará o usuário decidir se compra ou não, afinal, mostra que outras pessoas compraram e gostaram! Mas também é a área mais chata de uma aplicação. Por isso, deve ser dinãmica e gerar interesse. Cuidado para que não pareça falso, se não tera o efeito inverso! Mostre também aquelas avaliações que não são de nota máxima, afinal é impossível agradar a todos. Lembre-se do "Efeito Pratfall"
+
+#######################################################################################################################################################################	
+
+Conteúdo Extra: Heurísticas de Nielsen
+
+	As heurísticas de Nielsen são um conjunto de princípios ou diretrizes de design para usabilidade de produtos digitais. Elas foram criadas por Jakob Nielsen na década de 1990 e se tornaram uma referência no design de experiências do usuário. A seguir, são explicadas todas as heurísticas de Nielsen:
+
+	Visibilidade do status do sistema: 
+		o usuário deve poder ver claramente o que está acontecendo no sistema em cada momento e receber feedback de suas ações.
+	Correspondência entre o sistema e o mundo real: 
+		o sistema deve falar a mesma linguagem que os usuários, utilizando termos e conceitos que lhes sejam familiares.
+	Controle e liberdade do usuário: 
+		Os usuários devem ter o controle de sua experiência de uso, podendo desfazer ações e sair de situações indesejadas.
+	Consistência e padrões: 
+		Os usuários esperam que os padrões de design e as convenções sejam coerentes em todas as partes do sistema e se ajustem aos padrões estabelecidos.
+	Prevenção de erros: 
+		O sistema deve ser projetado para prevenir erros e facilitar a recuperação dos mesmos em caso de ocorrerem.
+	Reconhecimento em vez de lembrança: 
+		O sistema deve ser projetado para que os usuários não precisem lembrar de informações ou comandos complexos, mas que estes sejam apresentados de forma 			reconhecível.
+	Flexibilidade e eficiência de uso: 
+		O sistema deve ser eficiente tanto para usuários novatos quanto para especialistas, permitindo a personalização da experiência de uso.
+	Design estético e minimalista: 
+		O design deve ser atraente e coerente com a marca, mas sem distrair a atenção dos usuários da funcionalidade principal.
+	Ajuda e documentação: 
+		O sistema deve ser projetado para que os usuários não precisem ler manuais de instruções extensos, mas em caso de serem necessários, estes devem ser 			facilmente acessíveis e compreensíveis.
+	Feedback e facilidade de uso: 
+		os usuários devem receber feedback constante de suas ações e o sistema deve ser projetado para que a interação seja o mais fácil possível.
+
+Conteúdo Extra: Pensamento do Design
+	A relação entre as interfaces de um produto e o usuário, é como a relação de um casal. Se não há dialogo e não se entendem, haverá atritos, brigas e uma possível separação. 
+
+
+
+Conteúdo Extra: Efeito Pratfall
+
+	O "Efeito Pratfall" é um fenômeno psicológico que se refere à tendência das pessoas de perceber outras pessoas atraentes como ainda mais atraentes depois de cometerem um erro ou falha. Esse efeito foi descoberto em um estudo realizado na década de 1960, onde os participantes foram solicitados a avaliar o desempenho de um suposto candidato a um programa de televisão. Os participantes avaliaram o candidato que cometeu uma pequena falha como mais atraente e simpático do que aquele que não cometeu falha alguma.
+	O "Efeito Pratfall" pode ser explicado pelo fato de que, quando alguém comete um erro ou falha, isso faz com que a pessoa pareça mais humana e acessível aos outros. Isso ajuda a reduzir a tensão e a distância social que pode existir entre as pessoas, tornando a pessoa mais simpática e atraente.
+	Esse efeito tem sido aplicado em diversas áreas, como em marketing e publicidade, onde as empresas utilizam a estratégia de mostrar personagens comuns cometendo falhas, tornando-os mais acessíveis e humanos aos olhos do público. O "Efeito Pratfall" também pode ser usado em situações sociais, como em entrevistas de emprego, onde um candidato que admite e lida com um erro de forma madura e construtiva pode ser percebido como mais atraente e competente.
+
+
+
+Conteúdo Extra; Viés Cognitivo
+
+	Viés cognitivo é uma tendência humana comum de processar informações de maneira subjetiva, distorcida ou tendenciosa. Isso ocorre porque o cérebro humano usa atalhos mentais, ou heurísticas, para processar e interpretar informações, o que pode levar a julgamentos imprecisos ou conclusões errôneas.
+	Existem muitos tipos de viés cognitivo, incluindo o efeito de ancoragem, que é a tendência de se basear em informações iniciais para tomar decisões, o viés de confirmação, que é a tendência de buscar e interpretar informações de maneira que confirmem as próprias crenças, e o viés da disponibilidade, que é a tendência de dar mais peso a informações que são facilmente lembradas ou acessíveis.
+	Esses vieses podem afetar as decisões e ações das pessoas em diversos aspectos da vida, desde escolhas pessoais até decisões políticas e empresariais. Os vieses cognitivos também podem levar a preconceitos e discriminação, já que as pessoas tendem a interpretar informações de maneira tendenciosa ou subjetiva.
+	Conhecer os vieses cognitivos é importante para tomar decisões mais objetivas e justas, tanto para indivíduos quanto para empresas e organizações. A conscientização desses vieses pode ajudar a reduzir sua influência em nossas decisões e a nos tornar mais conscientes e críticos em relação às informações que recebemos e interpretamos.
+
+	Viés de confirmação
+		- A tendência de buscar, interpretar e lembrar informações de maneira a confirmar nossas próprias crenças e hipóteses, enquanto ignoramos ou distorcemos informações que contradizem essas crenças.
+	Viés de disponibilidade 
+		- A tendência de dar mais importância a informações facilmente disponíveis na memória ou em destaque na mídia, em vez de informações mais relevantes, precisas ou estatisticamente significativas.
+	Viés de ancoragem 
+		- A tendência de se fixar em uma informação inicial ou "âncora", mesmo que seja irrelevante ou aleatória, e usá-la como referência para tomar decisões subsequentes.
+	Viés de retrospectiva 
+		- A tendência de ver eventos passados como mais previsíveis e prováveis do que realmente eram, após conhecer os resultados.
+	Viés de auto-atribuição 
+		- A tendência de assumir o crédito por sucessos e culpar os outros por falhas.
+	Viés de autoconhecimento 
+		- A tendência de superestimar nossa própria inteligência, habilidades, competência e controle sobre eventos externos.
+	Viés de ambiguidade 
+		- A tendência de evitar informações ou decisões ambíguas ou incertas, preferindo informações ou decisões mais claras e definidas.
+	Viés de aversão à perda 
+		- A tendência de dar mais importância a evitar perdas do que a obter ganhos equivalentes.
+	Viés de confiança excessiva 
+		- A tendência de superestimar nossa própria precisão, confiança e habilidade em tomar decisões, muitas vezes ignorando informações críticas ou feedback negativo.
+	Viés de efeito placebo 
+		- A tendência de atribuir melhorias em nosso estado de saúde ou desempenho a uma intervenção que não tem efeito real, mas é percebida como benéfica.
+	Viés do status quo 
+		- A tendência de preferir a manutenção do status quo, mesmo quando uma mudança pode ser benéfica, por medo de mudanças desconhecidas ou de perturbar o equilíbrio existente.
+
+Viés de falso consenso
+Viés de fundamentalismo
+Viés de grupo
+Viés de inércia
+Viés de informação incompleta
+Viés de justiça
+Viés de narrativa
+Viés de otimismo
+Viés de recência
+Viés de representatividade
+Viés de seleção
+Viés de sobrevivência
+Viés de status quo
+Viés do excesso de confiança
+Viés do retrospecto
+Viés do self-serving
+Viés do suporte do grupo
+Viés do teimoso
+Viés retrospectivo
+Viés de ação
+
+Conhecimento Extra: Metodologia Double Diamond
+
+	A metodologia Double Diamond é um processo de design thinking que visa ajudar as equipes a solucionar problemas complexos de forma criativa e eficaz. Esse processo é dividido em quatro fases: Descoberta, Definição, Desenvolvimento e Entrega. O nome "Double Diamond" (Diamante Duplo) é uma referência à forma de diamante que se forma durante o processo, dividindo-se em duas etapas amplas e aprofundando-se em cada uma delas.
+	A primeira etapa, "Descoberta", consiste em explorar e entender o problema em questão. Nessa fase, a equipe se concentra em coletar informações, entrevistar os usuários, realizar pesquisas de mercado, analisar dados e identificar oportunidades para soluções inovadoras.
+	A segunda etapa, "Definição", envolve a síntese e o refinamento das ideias coletadas durante a etapa anterior. Nessa fase, a equipe deve selecionar as melhores ideias e definir uma abordagem estratégica para resolvê-las. Isso inclui estabelecer objetivos claros, identificar as necessidades dos usuários, definir requisitos e estabelecer critérios de sucesso.
+	A terceira etapa, "Desenvolvimento", é a fase de criação e prototipagem de soluções. Nessa fase, a equipe trabalha na concepção e desenvolvimento de ideias, explorando diferentes abordagens e criando protótipos que possam ser testados com os usuários.
+	Por fim, a quarta etapa, "Entrega", é onde as soluções são implementadas e lançadas no mercado. Nessa fase, a equipe trabalha na produção final da solução, realizando testes finais e preparando a solução para o lançamento.
+	A metodologia Double Diamond é uma abordagem sistemática para o design thinking que ajuda a garantir que as soluções sejam criativas, eficazes e atendam às necessidades dos usuários. Ela fornece um framework claro para o processo de design, garantindo que todas as etapas importantes sejam cobertas e permitindo que a equipe trabalhe de forma mais eficiente e produtiva.
+
+
+
+Conhecimento Extra: Efeito Hawthorne
+
+	O efeito Hawthorne é um fenômeno que ocorre quando a produtividade de um trabalhador ou grupo de trabalhadores melhora simplesmente por causa da atenção ou cuidado especial que estão recebendo de seus supervisores ou pesquisadores, em vez de quaisquer mudanças específicas nas condições de trabalho.
+	Esse efeito foi originalmente observado em estudos realizados por Elton Mayo e seus colegas na Western Electric Company em Hawthorne, Illinois, na década de 1920. A empresa estava interessada em descobrir se a intensidade da iluminação no ambiente de trabalho afetava a produtividade dos funcionários. No entanto, os resultados foram inesperados: a produtividade dos trabalhadores melhorou independentemente das condições de iluminação.
+	Mayo e sua equipe descobriram que as melhorias na produtividade estavam diretamente relacionadas à atenção que os trabalhadores estavam recebendo dos pesquisadores. Os funcionários se sentiram valorizados e notaram que suas preocupações estavam sendo levadas em consideração. Isso aumentou sua motivação e senso de responsabilidade em relação ao trabalho, o que resultou em um aumento geral na produtividade.
+	O efeito Hawthorne tem implicações importantes para a gestão de empresas e organizações. Ele sugere que a atenção e o cuidado que os funcionários recebem de seus supervisores e gerentes podem ter um impacto significativo em sua produtividade e motivação. Isso significa que os gerentes devem prestar atenção às necessidades e preocupações dos funcionários e fornecer feedback positivo e reconhecimento pelo trabalho bem feito. Quando os funcionários se sentem valorizados e apoiados, sua motivação e produtividade tendem a aumentar.
+	O efeito Hawthorne pode ser aplicado no design de interfaces e experiências do usuário de várias maneiras.
+	Por exemplo, ao realizar testes de usabilidade, é importante que os participantes se sintam valorizados e apoiados durante o processo. Os pesquisadores devem ser cuidadosos em suas interações com os usuários e fornecer feedback positivo para mantê-los motivados e engajados. Isso pode melhorar a qualidade dos resultados do teste e fornecer insights mais precisos sobre a experiência do usuário.
+	Além disso, o efeito Hawthorne pode ser usado para melhorar a colaboração entre designers e usuários. Envolvendo os usuários no processo de design e fornecendo-lhes a oportunidade de dar feedback, os designers podem aumentar a motivação e o senso de responsabilidade dos usuários em relação ao produto final. Isso pode ajudar a garantir que o produto atenda às necessidades do usuário e seja bem-sucedido no mercado.
+	Por fim, o efeito Hawthorne pode ser usado para melhorar a cultura organizacional e o bem-estar dos funcionários de uma empresa de design. Ao fornecer um ambiente de trabalho acolhedor e incentivador, os designers podem melhorar a satisfação dos funcionários e sua motivação, resultando em um melhor desempenho e produtividade geral.
+
+#######################################################################################################################################################################
+
+Gere em seus usuários a dependência por suas aplicações: O que tem feito para os usuários ficarem apegados emocionalmente?
+
+	- Tamagotchi, Canva e Notion descobriram como fazer isso.
+	- Efeito Tamagotchi: É a tendência de se apegar emocionalmente com coisas que não tem emoção! (Going Merry em One Piece)
+		- Apego emocional
+			Notion: Pode ser usado como uma agenda, para organizar e tickar as atividades do dia. 
+			Canva: Permite o desenvolvimento de designs bonitos, de forma rápida e prática. 
+		- Insubstituição
+			- Utilidade
+			- Singularidade
+			- Beleza
+
+#######################################################################################################################################################################
+
+Ser especilista em ferramentas te fará projetar qualquer interface, mas ser especilista em humanos, te fará capaz de projetar qualquer ferramenta. 
+
+#######################################################################################################################################################################
+
+Problemas de Design no site do BBB 23:
+	Enquete pós-eliminação:
+		Pode induzir o público a escolher entre duas opções, baseada no conceito do "Vies do Meio": Em questões de múltipla escolha (com quatro respostas), os humanos tendem a marcar as opções do meio! 
+	Excesso de publicidade na plataforma: O excesso de publicidade atrapalha a leitura do conteúdo postado, o que afasta o usuário. 
+	Tentar replicar ações do mobile na web, o que pode causar estranheza e afastar o usuário. 
+		
+#######################################################################################################################################################################
+
+Como o Nescau influência a sua percepção manipulando a sua mente:
+	Enviesamento! 
+		Efeito de Enquadramento: As nossas decisões podem ser influenciadas pela forma como as informações são apresentadas. 
+	
+	Comparando as tabelas nutricionais do Nescau Tradicional e do Nescau Light, vemos que elas estão em proporções diferentes!
+		Comum: Proporção é de duas colheres de sopa! 
+		Light: Proporção é de uma colher de sopa!
+
+	#######################################################################################################################################################################
+
+Como o design de um Cartaz fez a Grã-bretanha conseguir que mais de dois milhões de homens se alistassem ao exército: 
+	
+	Viés Cognitivo: Viés da Desejabilidade Social, ou seja, nossa tendência de tomar decisões ou formar opiniões com base no que acreditamos que outras pessoas vão aceitar ou concordar. 
+		- O seu país precisa de você!
+		- Papai, o que você fez na grande guerra?
+
+	Se pensamos muito no que os outros vão aceitar ou concordar, em pesquisas de design, podemos ter resultados enviesados. 
+	Para contornar esse problema, podemos fazer pesquisas anônimas. Observe bem seus usuários e faça perguntas indiretas. 
+	
+		Você usaria o meu aplicativo de taxi?
+		Como você pede o taxi hoje?
+
+#######################################################################################################################################################################
+
+Ao desenvolver um produto, tendemos a perguntar para as pessoas que estão ao nosso redor a opinião que tiveram sobre ele: 
+	- Comprariam?
+	- Aprovariam?
+	- Rejeitariam?
+
+	Metodologia Double Diamond: Descoberta, Definição, Desenvolvimento e Entrega. 
+	Lembre-se: As pessoas mentem e mentem mais ainda quando tem dinheiro envolvido! 
+		Se pedimos para alguém provar uma  comida que fizemos, a pessoa estará propensa a dizer que gostou.
+		(As pessoas gostam de ser legais e normalmente não dão um julgamento honesto neste tipo de teste)
+
+		Em grupo, as pessoas são influenciadas diretamente em relação as outras. Se 75% das pessoas disserem que o produto é bom, existe a chance de que os demais sigam o mesmo caminho. Pois, tendemos a responder o que achamos que é socialmente aceitável. 
+		
+	Por isso, a resposta depende da pergunta e da forma como você conduz a pesquisa. 
+		Viés da Desejabilidade Social: Pensar no que os outros consideram como aceitável. 
+		Efeito de Hawthorne: O comportamento da pessoa muda, por que ela sabe que está sendo observada.
+
+	O comportamento não engana, diferente das palavras. 
+
+	Falácia dos Custos Irrecuperáveis: Se já foi investido muito tempo ou dinheiro em algo, as pessoas estão mais propensas a continuar investindo mais, o que leva a cada vez mais dificuldade de abandonar este "algo". Nossas decisões não são puramente racionais, pois somos influecnidados por nossas emoções.
+		Este efeito psicológico pode ser utilizado para reter o usuário, fazer com que a mente dele nos ajude a mantê-lo usando nossos serviços. 
+		Através do UX Designer podemos mostrar ao usuário o que ele fez, o que construiu, criou, organizou, quanto mais ele perceber que está imerso em seu produto, mais ele ficará envolvido e menos tenderá a abandoná-lo. 
+
+	O medo do Desconhecido: Quando existe dinheiro ou saúde envolvido, somos influenciados pelo "Viés do Risco Zero", pois temos medo de mudanças, do desconhecido. Ou seja, optamos por situaçãos onde sentimos que não existe risco nela. 
+		Seu design deixa claro pro usuário o que vem pela frente? Se o seu Design não for transparente, pode acabar com o negócio! 
+
+	StoryTelling: Desenvolver uma narrativa sobre um produto, com a intenção de mostrar o valor na vida do usuário.
+
+	Nem sempre as nossas escolhas são nossas: Existem várias formas de sermos manipulados por designer e estratégias de venda. As pessoas tendem a manter o Status Quo, por medo do desconhecido, mesmo que o novo seja benéfico pra ela! E isso acontece pois preferimos manter a comodidade, não ter que ter esforço algum. Isso acontece por conta de nossa aversão a perda e a tendência de evitar arrependimentos e evita a tomada de decisão, pois temos "fadiga de descisão". E, por isso, o usuário tende a escolher a opção padrão: Escolher o recomendado, instalar um software na configuração padrão, clica no primeiro link do google!
