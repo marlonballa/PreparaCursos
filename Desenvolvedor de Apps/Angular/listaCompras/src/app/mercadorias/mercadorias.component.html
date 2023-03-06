@@ -1,9 +1,11 @@
-<div class="container">
+<div class="container" id="listaCompraContainer">
     <div class="title">
         <h1>{{title}}</h1>
-        <span class="material-symbols-outlined">
+        <a href="#modalContainer">            
+            <span class="material-symbols-outlined">
             add_shopping_cart
-        </span>
+            </span>
+        </a>
     </div>
     <div>
         <div class="shoppingList">
@@ -22,17 +24,23 @@
             <div class="shoppingListBody">
                 <div class="shoppingListRow" 
                      *ngFor="let mercadoria of mercadorias; let i = index; let evenLine = even; odd as oddLine"
-                     [ngClass]="{evenLine:evenLine, oddLine:oddLine}">
+                     [ngClass]="{evenLine:evenLine, oddLine:oddLine}"
+                     [ngSwitch]="mercadoria.quantidade > mercadoria.quantidadeMinima"
+                     >
                     <span class="shoppingListDatas"> {{mercadoria.id}} </span>
                     <span class="shoppingListDatas"> {{mercadoria.descricao}} </span>
                     <span class="shoppingListDatas"> {{mercadoria.quantidade}} </span>
                     <span class="shoppingListDatas"> {{mercadoria.quantidadeMinima}} </span>
-                    <span class="shoppingListDatas" style="font-weight: bold;"> 
-                        <span *ngIf="mercadoria.quantidade < mercadoria.quantidadeMinima" style="color:rgba(255, 0, 0, 0.75);">
-                            SIM
+                    <span class="shoppingListDatas" style="font-weight: bold;">
+                        <span *ngSwitchCase="true">
+                            <span *ngIf="mercadoria.quantidade > mercadoria.quantidadeMinima" style="color:mediumspringgreen">
+                                NÃO
+                            </span>
                         </span>
-                        <span *ngIf="mercadoria.quantidade >= mercadoria.quantidadeMinima" style="color:mediumspringgreen">
-                            NÃO
+                        <span *ngSwitchCase="false">
+                            <span *ngIf="mercadoria.quantidade <= mercadoria.quantidadeMinima" style="color:rgba(255, 0, 0, 0.75);">
+                                SIM
+                            </span>
                         </span>
                     </span>
                     <!-- <span class="shoppingListDatas"> 
@@ -46,3 +54,55 @@
         </div>
     </div>
 </div>
+<!--JANELA MODAL-->
+<div class="modalContainer" id="modalContainer">
+    <div class="addNewProduct">
+        <div class="supermarketImg">
+            <div>
+                <span>Tranquilidade</span> 
+                <span>Entrega em domicílio!</span>
+            </div>
+            <div class="userContainer">
+                    <img>
+                    <span>Rogério Gabriel</span>              
+            </div>
+        </div>
+        <form action="" class="addNewProductForm">
+            <p>
+                Pegou tudo que precisava? Hein? 🛒
+            </p>
+            <p>
+                Confere as frutas e verduras fresquinhas, os lanchinhos gostosos para o trabalho e as besteirinhas do final de semana  😎😍
+            </p>
+            <div class="inputContainer">
+                <input 
+                    type="text" 
+                    name="id" 
+                    placeholder="Código do Produto"
+                    [ngModel]="newProduct.id"    
+                >
+                <input 
+                    type="text" 
+                    name="descricao" 
+                    placeholder="Descrição do Produto"
+                    [ngModel]="newProduct.descricao"    
+                >
+                <input 
+                    type="text" 
+                    name="quantidade" 
+                    placeholder="Quantidade Atual do Produto"
+                    [ngModel]="newProduct.quantidade"
+                >
+                <input 
+                    type="text" 
+                    name="quantidadeMinima" 
+                    placeholder="Quantidade Mínima do Produto"
+                    [ngModel]="newProduct.quantidadeMinima"
+                >
+                <button type="submit">ENVIAR</button>
+                <a href="" class="closedModalContainer">CANCELAR</a>
+            </div>
+        </form>      
+    </div>
+</div>
+

@@ -1,0 +1,89 @@
+.modalContainer {
+    background-color: #1a1a1a;
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: 'Poppins', sans-serif;
+}
+
+.addNewProduct {
+    width: 60vw;
+    height: 80vh;
+    background-color: whitesmoke;
+
+    padding: 1rem;
+    border-radius: 0.25rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.supermarketImg {
+    width: 48%;
+    height: 100%;
+    color: wheat;
+
+    padding: 1.25rem;
+
+    border-radius: 1rem;
+    background-image: url(https://images.pexels.com/photos/1655166/pexels-photo-1655166.jpeg?auto=compress&cs=tinysrgb&w=600);
+    background-position: right top;
+    background-size: cover;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.supermarketImg div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.supermarketImg span:first-child {
+    font-weight: bold;
+}
+
+.supermarketImg span:last-child {
+    font-size: small;
+}
+
+.supermarketImg .userContainer {
+    display: flex;
+    justify-content: initial;
+    gap: 0.5rem;
+}
+
+.supermarketImg .userContainer img {
+    height: 36px;
+    width: 36px;
+    border-radius: 50%;
+
+    border: 2px solid wheat;
+    background-image: url(https://images.pexels.com/photos/428328/pexels-photo-428328.jpeg?auto=compress&cs=tinysrgb&w=50);
+
+    background-position: center top;
+}
+
+.addNewProductForm {
+    width: 52%;
+    height: 100%;
+    padding: 1.25rem;
+    border-radius: 0.25rem;
+}
+
+.addNewProductForm h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.addNewProductForm p {
+    text-align: center;
+    font-size: small;
+}

@@ -5,8 +5,17 @@ import { Component } from '@angular/core';
   templateUrl: './mercadorias.component.html',
   styleUrls: ['./mercadorias.component.css']
 })
+
 export class MercadoriasComponent {
   title = "Lista de Compras";
+  // classes = {
+
+  // }
+  // addNewProduct() {
+  //   let modalContainer = document.querySelector('#modalContainer');
+  //   modalContainer.classList.remove('desabilitada');
+  //   modalContainer.classList.add("habilitada");
+  // }  
   mercadorias = 
   [
     {
@@ -14,30 +23,15 @@ export class MercadoriasComponent {
       descricao: "Arroz",
       quantidade: 1, 
       quantidadeMinima: 10
-    },
-    {
-      id:2,
-      descricao: "Feijão",
-      quantidade: 5,
-      quantidadeMinima: 30
-    },
-    {
-      id:3,
-      descricao: "Rúcula",
-      quantidade: 60, 
-      quantidadeMinima: 10
-    },
-    {
-      id:4,
-      descricao: "Paçoca",
-      quantidade: 17,
-      quantidadeMinima: 50
-    },
-    {
-      id:5,
-      descricao: "Geleia de Mocotó",
-      quantidade: 100,
-      quantidadeMinima: 25
-    },                  
+    }     
   ]
+
+  newProduct = {
+    id: 2,
+    descricao: "Feijão",
+    quantidade: 2,
+    quantidadeMinima: 1
+  }
+
+  constructor() { }
 }
