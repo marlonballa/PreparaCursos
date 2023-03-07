@@ -26,7 +26,7 @@
     font-size: 1.5rem;
     height: 2rem;
     width: 4rem;
-    background-color: springgreen;
+    background-color: #28a745;
     border-radius: 0.25rem;
 
     display: flex;
@@ -43,8 +43,50 @@
   }
 
   .material-symbols-outlined:hover {
-    background-color:seagreen;
+    scale: 1.2;
+    transition: 0.3s;
+    color: springgreen;
+    border: 1px solid springgreen;
+    background-color: white;
   }
+
+.editOrDelete {
+    flex: 1;
+    display: flex;
+    justify-content: space-around;
+    border-left: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.editOrDelete span {
+    width: 45%;
+}
+
+.editOrDelete span:first-child {
+    transition: 0.3s;
+    background-color:  #ffc107;
+}
+
+.editOrDelete span:first-child:hover {
+    cursor: pointer;
+    scale: 1.2;
+    transition: 0.3s;
+    color: #e0a800;
+    border: 1px solid #e0a800;
+    background-color:  white;
+}
+
+.editOrDelete span:last-child {
+    background-color: #dc3545;
+}
+
+.editOrDelete span:last-child:hover {
+    cursor: pointer;
+    scale: 1.2;
+    transition: 0.3s;
+    color: #c82333;
+    border: 1px solid #c82333;
+    background-color:  white;
+}
 
 .shoppingList {
     width: 100%;
@@ -67,6 +109,12 @@
 
 .shoppingListHeaderItems span {
     flex: 1;
+    border-left: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.shoppingListBody {
+    overflow: auto;
+    height: 65vh;
 }
 
 .shoppingListBody .shoppingListRow {
@@ -84,6 +132,7 @@
 
 .shoppingListBody .shoppingListDatas {
     flex: 1;
+    border-left: 1px solid rgba(0, 0, 0, 0.15);
 } 
 
 /*JANELA MODAL*/
@@ -213,24 +262,45 @@
     outline: 0.25px solid rgba(0, 0, 0, 0.25);
 }
 
-.inputContainer button, .closedModalContainer {
-    height: 2rem;
-    margin-top: 1rem;
-    outline: none;
-
-    color: springgreen;
-    font-size: 1rem;
-    font-weight: bold;
-    letter-spacing: 0.25rem;
-
-    border: 1px solid springgreen;
-    border-radius: 0.5rem;
-
-    transition: 0.3s;
-    background-color: white;
+.campoObrigatorio {
+    font-size: 10px;
+    padding: 0.25rem 1rem;
+    border-radius: 0.25rem;
+    color: wheat;
+    background-color: #dc3545;
 }
 
-.inputContainer button:hover {
+.campoObrigatorio:hover {
+    cursor: pointer; 
+    scale: 1.5;
+}
+
+.inputContainer a {
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 0.5rem;
+    background-color: white;
+
+    transition: 0.3s;
+    letter-spacing: 0.25rem;
+
+    height: 2rem;
+    margin-top: 0.75rem;
+    outline: none;
+}
+
+.inputContainer .submitInformations {
+    color: springgreen;
+    border: 1px solid springgreen;
+}
+
+.inputContainer .submitInformations:hover {
     cursor: pointer;
     letter-spacing: 0.5rem;
     transition: 0.3s;
@@ -238,22 +308,16 @@
     background-color: springgreen;
 }
 
-.closedModalContainer {
-    text-align: center;
-    text-decoration: none;
+.inputContainer .closedModalContainer {
+    margin-top: 0.25rem;
     color: rgba(255, 0, 0, 0.5);
-    background-color: white;
     border: 1px solid rgba(255, 0, 0, 0.5);
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
-.closedModalContainer:hover {
-    letter-spacing: 0.5rem;
+.inputContainer .closedModalContainer:hover {
     transition: 0.3s;
     color: white;
     transition: 0.3s;
+    letter-spacing: 0.5rem;
     background-color: red;
 }

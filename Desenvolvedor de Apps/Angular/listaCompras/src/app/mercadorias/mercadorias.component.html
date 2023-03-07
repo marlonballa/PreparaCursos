@@ -17,6 +17,7 @@
                     <span>Quantidade em Estoque</span>
                     <span>Quantidade Mínima</span>
                     <span>Precisa Comprar?</span>
+                    <span>Informações</span>
                     <!-- <span>Index</span> -->
                 </div>
             </div>
@@ -27,7 +28,7 @@
                      [ngClass]="{evenLine:evenLine, oddLine:oddLine}"
                      [ngSwitch]="mercadoria.quantidade > mercadoria.quantidadeMinima"
                      >
-                    <span class="shoppingListDatas"> {{mercadoria.id}} </span>
+                    <span class="shoppingListDatas"> {{mercadoria.id}} </span>                    
                     <span class="shoppingListDatas"> {{mercadoria.descricao}} </span>
                     <span class="shoppingListDatas"> {{mercadoria.quantidade}} </span>
                     <span class="shoppingListDatas"> {{mercadoria.quantidadeMinima}} </span>
@@ -43,6 +44,14 @@
                             </span>
                         </span>
                     </span>
+                    <div class="editOrDelete">
+                        <span class="material-symbols-outlined" (click)="emConstrucao()">
+                            edit_note
+                        </span>
+                        <span class="material-symbols-outlined" (click)="emConstrucao()">
+                            delete
+                        </span>                        
+                    </div>
                     <!-- <span class="shoppingListDatas"> 
                         {{i}} 
                         <span *ngIf="firstItem"> - Primeiro Item</span> 
@@ -76,31 +85,72 @@
             </p>
             <div class="inputContainer">
                 <input 
-                    type="text" 
+                    type="number" 
                     name="id" 
                     placeholder="Código do Produto"
-                    [ngModel]="newProduct.id"    
+                    [(ngModel)]="newProduct.id"
+                    required
+                    #validId="ngModel"   
                 >
+                <div 
+                    *ngIf="!validId.valid"
+                    class="campoObrigatorio">
+                    <!--
+                        O método 'Errors' esta relacionado com os atributos do html, no caso abaixo estamos relacionando o 'span' com o atributo required, ou seja se o atributo obrigatório não estiver preenchido, a msg aparecerá
+                    -->
+                    <span *ngIf="validId.errors?.['required']">Qual o ID deste produto? 😃</span>
+                </div>
                 <input 
                     type="text" 
                     name="descricao" 
                     placeholder="Descrição do Produto"
-                    [ngModel]="newProduct.descricao"    
+                    [(ngModel)]="newProduct.descricao"
+                    required
+                    #validDescricao="ngModel"    
                 >
+                <div 
+                    *ngIf="!validDescricao.valid"
+                    class="campoObrigatorio">                
+                    <span *ngIf="validDescricao.errors?.['required']">Você esqueceu de dizer qual é o produto 🤪</span>
+                </div>
                 <input 
-                    type="text" 
+                    type="number" 
                     name="quantidade" 
                     placeholder="Quantidade Atual do Produto"
-                    [ngModel]="newProduct.quantidade"
+                    [(ngModel)]="newProduct.quantidade"
+                    required
+                    #validQuantidade="ngModel"    
                 >
+                <div 
+                    *ngIf="!validQuantidade.valid"
+                    class="campoObrigatorio">                
+                    <span *ngIf="validQuantidade.errors?.['required']">Me conta, quantos a gente tem no estoque? 👀</span>
+                </div>
                 <input 
-                    type="text" 
+                    type="number" 
                     name="quantidadeMinima" 
                     placeholder="Quantidade Mínima do Produto"
-                    [ngModel]="newProduct.quantidadeMinima"
+                    [(ngModel)]="newProduct.quantidadeMinima"
+                    required
+                    #validQtdMinima="ngModel"    
                 >
-                <button type="submit">ENVIAR</button>
-                <a href="" class="closedModalContainer">CANCELAR</a>
+                <div 
+                    *ngIf="!validQtdMinima.valid"
+                    class="campoObrigatorio">                
+                    <span *ngIf="validQtdMinima.errors?.['required']">A gente não pode ter menos que isso?! 🚨🚨🚨</span>
+                </div>
+                <a
+                    type="submit"
+                    class="submitInformations"
+                    (click)="addNewProduct()"
+                    href="#listaCompraContainer">
+                    ENVIAR
+                </a>
+                <a 
+                    href="#listaCompraContainer" 
+                    class="closedModalContainer">
+                    CANCELAR
+                </a>
             </div>
         </form>      
     </div>

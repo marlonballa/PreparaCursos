@@ -8,14 +8,9 @@ import { Component } from '@angular/core';
 
 export class MercadoriasComponent {
   title = "Lista de Compras";
-  // classes = {
-
-  // }
-  // addNewProduct() {
-  //   let modalContainer = document.querySelector('#modalContainer');
-  //   modalContainer.classList.remove('desabilitada');
-  //   modalContainer.classList.add("habilitada");
-  // }  
+  emConstrucao() {
+    alert("Esta funcionalidade ainda está em construção!")
+  }
   mercadorias = 
   [
     {
@@ -33,5 +28,14 @@ export class MercadoriasComponent {
     quantidadeMinima: 1
   }
 
+  //Função responsável por adicionar novos produtos à lista de compras
+  addNewProduct() {
+    this.mercadorias.push({
+      id:this.newProduct.id,
+      descricao: this.newProduct.descricao,
+      quantidade: this.newProduct.quantidade,
+      quantidadeMinima: this.newProduct.quantidadeMinima
+    });
+  }
   constructor() { }
 }
