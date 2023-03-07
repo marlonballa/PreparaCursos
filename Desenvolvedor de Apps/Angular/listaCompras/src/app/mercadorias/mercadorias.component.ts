@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
+import { Mercadoria } from '../mercadoria';
+import { MercadoriaService } from '../mercadoria.service';
 
 @Component({
   selector: 'app-mercadorias',
@@ -8,19 +10,8 @@ import { Component } from '@angular/core';
 
 export class MercadoriasComponent {
   title = "Lista de Compras";
-  emConstrucao() {
-    alert("Esta funcionalidade ainda está em construção!")
-  }
-  mercadorias = 
-  [
-    {
-      id:1,
-      descricao: "Arroz",
-      quantidade: 1, 
-      quantidadeMinima: 10
-    }     
-  ]
 
+  mercadorias!: Mercadoria[];
   newProduct = {
     id: 2,
     descricao: "Feijão",
@@ -37,5 +28,16 @@ export class MercadoriasComponent {
       quantidadeMinima: this.newProduct.quantidadeMinima
     });
   }
-  constructor() { }
+
+  constructor(private mercadoriaService: MercadoriaService) { }
+  ngOnInit() {
+    this.getMercadorias();
+  }
+  getMercadorias(): void {
+    this.mercadorias = this.mercadoriaService.getMercadorias();
+  }
+
+  emConstrucao() {
+    alert("Esta funcionalidade ainda está em construção!")
+  }
 }
