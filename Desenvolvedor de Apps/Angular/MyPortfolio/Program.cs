@@ -95,5 +95,4 @@ public class Contact
     public string SubjectContatc { get; set; } = string.Empty;
     public string MessageContatc { get; set; } = string.Empty;
     public DateTime DateOfContact { get; set; }
-
 }
